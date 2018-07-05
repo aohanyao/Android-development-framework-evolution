@@ -1,5 +1,6 @@
 package com.road.of.android;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -9,6 +10,9 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.road.of.android.moudle.user.LoginActivity;
+
+//http://olrt5mymy.bkt.clouddn.com/app_login.json
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -26,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        //跳转到登录页面
+        startActivity(new Intent(MainActivity.this, LoginActivity.class));
     }
 
     @Override
