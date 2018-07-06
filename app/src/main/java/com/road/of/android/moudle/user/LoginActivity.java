@@ -10,10 +10,13 @@ import com.road.of.android.R;
 import com.road.of.android.bean.LoginDto;
 import com.road.of.android.biz.service.UserService;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import org.reactivestreams.Subscription;
+
+import io.reactivex.FlowableSubscriber;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class LoginActivity extends AppCompatActivity {
@@ -35,6 +38,8 @@ public class LoginActivity extends AppCompatActivity {
                 .baseUrl("http://olrt5mymy.bkt.clouddn.com/")//请求url
                 //增加转换器，这一步能直接Json字符串转换为实体对象
                 .addConverterFactory(GsonConverterFactory.create())
+                //加入 RxJava转换器
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
 
         mUserService = retrofit.create(UserService.class);
@@ -54,28 +59,33 @@ public class LoginActivity extends AppCompatActivity {
                 String account = etAccount.getText().toString();
                 //获取密码
                 String password = etPassword.getText().toString();
-
-                //调用登录
+                //登录
                 mUserService.login(account, password)
-                        //执行请求
-                        .enqueue(new Callback<LoginDto>() {
+                        .subscribeOn(Schedulers.io())//运行在io线程
+                        .observeOn(AndroidSchedulers.mainThread())//回调在主线程
+                        .subscribe(new FlowableSubscriber<LoginDto>() {
                             @Override
-                            public void onResponse(Call<LoginDto> call, Response<LoginDto> response) {
-                                //打印登录信息
-                                Log.e(TAG, "onResponse: " + response.body());
-                                //结果
-                                //LoginDto{code=200, message='登录成功',
-                                // data=UserInfo{userName='aohanyao',
-                                // nickName='禁言', header='', age=20,
-                                // sex=1, phone='13813801380',
-                                // email='aohanyao@gmail.com'}}
+                            public void onSubscribe(Subscription s) {
+                                //开始
                             }
 
                             @Override
-                            public void onFailure(Call<LoginDto> call, Throwable t) {
+                            public void onNext(LoginDto loginDto) {
+                                //结果回调
+                                Log.e(TAG, "onNext: " + loginDto);
+                            }
 
+                            @Override
+                            public void onError(Throwable t) {
+                                //错误
+                            }
+
+                            @Override
+                            public void onComplete() {
+                                //完成
                             }
                         });
+
 
             }
         });

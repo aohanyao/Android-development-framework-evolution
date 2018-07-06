@@ -2,7 +2,7 @@ package com.road.of.android.biz.service;
 
 import com.road.of.android.bean.LoginDto;
 
-import retrofit2.Call;
+import io.reactivex.Flowable;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
@@ -15,6 +15,6 @@ import retrofit2.http.Query;
 public interface UserService {
 
     @GET("app_login.json")
-    Call<LoginDto> login(@Query("account") String account,
-                         @Query("password") String password);
+    Flowable<LoginDto> login(@Query("account") String account,
+                             @Query("password") String password);
 }
