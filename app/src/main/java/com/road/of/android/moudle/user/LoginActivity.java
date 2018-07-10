@@ -1,5 +1,6 @@
 package com.road.of.android.moudle.user;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -10,9 +11,9 @@ import com.road.of.android.R;
 import com.road.of.android.bean.LoginDto;
 import com.road.of.android.biz.service.UserService;
 
+import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 
-import io.reactivex.FlowableSubscriber;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 import retrofit2.Retrofit;
@@ -53,6 +54,7 @@ public class LoginActivity extends AppCompatActivity {
 
         //获取登录按钮 设置点击事件
         findViewById(R.id.btn_login).setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("CheckResult")
             @Override
             public void onClick(View v) {
                 //获取帐号
@@ -63,10 +65,10 @@ public class LoginActivity extends AppCompatActivity {
                 mUserService.login(account, password)
                         .subscribeOn(Schedulers.io())//运行在io线程
                         .observeOn(AndroidSchedulers.mainThread())//回调在主线程
-                        .subscribe(new FlowableSubscriber<LoginDto>() {
+                        .subscribeWith(new Subscriber<LoginDto>() {
                             @Override
                             public void onSubscribe(Subscription s) {
-                                //开始
+                                Log.e(TAG, "onSubscribe: ");
                             }
 
                             @Override
@@ -77,15 +79,15 @@ public class LoginActivity extends AppCompatActivity {
 
                             @Override
                             public void onError(Throwable t) {
-                                //错误
+                                t.printStackTrace();
+                                Log.e(TAG, "onError: ");
                             }
 
                             @Override
                             public void onComplete() {
-                                //完成
+                                Log.e(TAG, "onComplete: ");
                             }
                         });
-
 
             }
         });
