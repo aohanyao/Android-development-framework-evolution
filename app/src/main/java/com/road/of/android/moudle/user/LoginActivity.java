@@ -16,9 +16,11 @@ import org.reactivestreams.Subscription;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
+import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
-import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.converter.gson.CustGsonConverterFactory;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -35,12 +37,19 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void initRetrofit() {
+        HttpLoggingInterceptor logInterceptor = new HttpLoggingInterceptor();
+        logInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+        OkHttpClient.Builder builder = new OkHttpClient.Builder();
+        builder.addInterceptor(logInterceptor);
+
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://olrt5mymy.bkt.clouddn.com/")//请求url
                 //增加转换器，这一步能直接Json字符串转换为实体对象
-                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(CustGsonConverterFactory.create())
                 //加入 RxJava转换器
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .client(builder.build())
                 .build();
 
         mUserService = retrofit.create(UserService.class);
