@@ -11,11 +11,9 @@ import com.road.of.android.R;
 import com.road.of.android.bean.LoginDto;
 import com.road.of.android.biz.service.UserService;
 
-import org.reactivestreams.Subscriber;
-import org.reactivestreams.Subscription;
-
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
+import io.reactivex.subscribers.ResourceSubscriber;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -74,11 +72,8 @@ public class LoginActivity extends AppCompatActivity {
                 mUserService.login(account, password)
                         .subscribeOn(Schedulers.io())//运行在io线程
                         .observeOn(AndroidSchedulers.mainThread())//回调在主线程
-                        .subscribeWith(new Subscriber<LoginDto>() {
-                            @Override
-                            public void onSubscribe(Subscription s) {
-                                Log.e(TAG, "onSubscribe: ");
-                            }
+                        .subscribeWith(new ResourceSubscriber<LoginDto>() {
+
 
                             @Override
                             public void onNext(LoginDto loginDto) {
