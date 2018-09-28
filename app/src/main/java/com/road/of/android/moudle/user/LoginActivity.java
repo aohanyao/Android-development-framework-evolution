@@ -3,55 +3,32 @@ package com.road.of.android.moudle.user;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.jaeger.library.StatusBarUtil;
 import com.road.of.android.R;
 import com.road.of.android.bean.LoginDto;
-import com.road.of.android.biz.service.UserService;
+import com.road.of.android.moudle.user.contract.LoginContract;
+import com.road.of.android.moudle.user.presenter.LoginPresenter;
 
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.schedulers.Schedulers;
-import io.reactivex.subscribers.ResourceSubscriber;
-import okhttp3.OkHttpClient;
-import okhttp3.logging.HttpLoggingInterceptor;
-import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
-import retrofit2.converter.gson.CustGsonConverterFactory;
-
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity implements LoginContract.View {
 
     private String TAG = "LoginActivity";
 
-    private UserService mUserService;
+    private LoginPresenter mLoginPresenter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        initRetrofit();
+        StatusBarUtil.setTranslucentForImageView(this, null);
+        mLoginPresenter = new LoginPresenter(this);
         initEvent();
     }
 
-    private void initRetrofit() {
-        HttpLoggingInterceptor logInterceptor = new HttpLoggingInterceptor();
-        logInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-        OkHttpClient.Builder builder = new OkHttpClient.Builder();
-        builder.addInterceptor(logInterceptor);
-
-
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://olrt5mymy.bkt.clouddn.com/")//请求url
-                //增加转换器，这一步能直接Json字符串转换为实体对象
-                .addConverterFactory(CustGsonConverterFactory.create())
-                //加入 RxJava转换器
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .client(builder.build())
-                .build();
-
-        mUserService = retrofit.create(UserService.class);
-    }
 
     private void initEvent() {
         //获取帐号输入框
@@ -69,31 +46,20 @@ public class LoginActivity extends AppCompatActivity {
                 //获取密码
                 String password = etPassword.getText().toString();
                 //登录
-                mUserService.login(account, password)
-                        .subscribeOn(Schedulers.io())//运行在io线程
-                        .observeOn(AndroidSchedulers.mainThread())//回调在主线程
-                        .subscribeWith(new ResourceSubscriber<LoginDto>() {
-
-
-                            @Override
-                            public void onNext(LoginDto loginDto) {
-                                //结果回调
-                                Log.e(TAG, "onNext: " + loginDto);
-                            }
-
-                            @Override
-                            public void onError(Throwable t) {
-                                t.printStackTrace();
-                                Log.e(TAG, "onError: ");
-                            }
-
-                            @Override
-                            public void onComplete() {
-                                Log.e(TAG, "onComplete: ");
-                            }
-                        });
+                Toast.makeText(LoginActivity.this, "正在登陆", Toast.LENGTH_SHORT).show();
+                mLoginPresenter.login(account, password);
 
             }
         });
+    }
+
+    @Override
+    public void loginSuccess(LoginDto loginDto) {
+        Toast.makeText(this, "登陆成功：" + loginDto.toString(), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void loginFailure(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 }

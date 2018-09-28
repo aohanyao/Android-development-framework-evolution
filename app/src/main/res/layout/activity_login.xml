@@ -10,7 +10,7 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="220dp"
+        android:layout_height="270dp"
         android:scaleType="fitXY"
         android:src="@mipmap/login_top_bg" />
 
@@ -19,20 +19,32 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_margin="10dp"
-        android:hint="帐号" />
+        android:background="@drawable/bg_edit_border"
+        android:hint="帐号"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:singleLine="true" />
 
     <EditText
         android:id="@+id/et_pass"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_margin="10dp"
-        android:hint="密码" />
+        android:background="@drawable/bg_edit_border"
+        android:hint="密码"
+        android:inputType="textPassword"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:singleLine="true" />
 
     <Button
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_margin="10dp"
-        android:text="登录" />
+        android:background="@drawable/bg_login_botton"
+        android:text="登录"
+        android:textColor="#fff"
+        android:textSize="15sp" />
 
 </LinearLayout>

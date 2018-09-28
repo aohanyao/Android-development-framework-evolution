@@ -39,4 +39,6 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:3.6.0'
     // core
     implementation project(':library-core')
+    // 沉浸状态栏
+    implementation 'com.jaeger.statusbarutil:library:1.5.1'
 }

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--没有按下的时候-->
+    <item android:state_pressed="false">
+        <shape android:shape="rectangle">
+            <corners android:radius="2dp" />
+            <solid android:color="@color/colorPrimary" />
+        </shape>
+    </item>
+    <!--按下之后-->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="2dp" />
+            <solid android:color="@color/colorPrimaryDark" />
+        </shape>
+    </item>
+</selector>

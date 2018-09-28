@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--没有获取焦点的时候-->
+    <item android:state_focused="false">
+        <shape android:shape="rectangle">
+            <corners android:radius="2dp" />
+            <solid android:color="#fff" />
+            <stroke android:width="1dp" android:color="#dedede" />
+
+        </shape>
+    </item>
+    <!--获取到焦点之后-->
+    <item android:state_focused="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="2dp" />
+            <solid android:color="#fff" />
+            <stroke android:width="1dp" android:color="@color/colorPrimary" />
+        </shape>
+    </item>
+</selector>
