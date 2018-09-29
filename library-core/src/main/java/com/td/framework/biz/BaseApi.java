@@ -2,6 +2,10 @@ package com.td.framework.biz;
 
 import java.util.concurrent.TimeUnit;
 
+import io.reactivex.Flowable;
+import io.reactivex.FlowableTransformer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -141,5 +145,21 @@ public class BaseApi {
             mClient = builder.build();
         }
         return mClient;
+    }
+
+    /**
+     * 统一线程处理
+     *
+     * @param <T>
+     * @return
+     */
+    public static <T> FlowableTransformer<T, T> getScheduler() {    //compose简化线程
+        return new FlowableTransformer<T, T>() {
+            @Override
+            public Flowable<T> apply(Flowable<T> observable) {
+                return observable.subscribeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread());
+            }
+        };
     }
 }

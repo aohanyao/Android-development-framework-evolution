@@ -5,11 +5,10 @@ import android.util.Log;
 import com.road.of.android.bean.LoginDto;
 import com.road.of.android.biz.service.ServiceBuild;
 import com.road.of.android.moudle.user.contract.LoginContract;
+import com.td.framework.biz.BaseApi;
 
 import org.reactivestreams.Subscriber;
 
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.schedulers.Schedulers;
 import io.reactivex.subscribers.ResourceSubscriber;
 
 /**
@@ -28,8 +27,7 @@ public class LoginPresenter extends LoginContract.Presenter {
         // 开始请求
         Subscriber subscriber = ServiceBuild.getUserService()
                 .login(userName, password)
-                .subscribeOn(Schedulers.io())//运行在io线程
-                .observeOn(AndroidSchedulers.mainThread())//回调在主线程
+                .compose(BaseApi.<LoginDto>getScheduler())
                 .subscribeWith(new ResourceSubscriber<LoginDto>() {
                     @Override
                     public void onNext(LoginDto loginDto) {
