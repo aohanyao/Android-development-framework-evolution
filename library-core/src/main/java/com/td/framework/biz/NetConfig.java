@@ -1,13 +1,12 @@
 package com.td.framework.biz;
 
-import okhttp3.CookieJar;
 import okhttp3.Interceptor;
 
 /**
  * 网络配置器
  * <p>在Application中使用</p>
  */
-public interface NetConfiger {
+public interface NetConfig {
     /**
      * 通用请求地址
      *
@@ -22,12 +21,6 @@ public interface NetConfiger {
      */
     Interceptor[] configInterceptors();
 
-    /**
-     * cookie配置
-     *
-     * @return
-     */
-    CookieJar configCookie();
 
     /**
      * 连接超时时间

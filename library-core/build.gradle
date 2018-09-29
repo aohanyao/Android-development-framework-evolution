@@ -32,13 +32,19 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     // RxJava
-    implementation 'io.reactivex.rxjava2:rxjava:2.1.5'
+    api 'io.reactivex.rxjava2:rxjava:2.2.2'
     // RxAndroid
-    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    api 'io.reactivex.rxjava2:rxandroid:2.0.1'
     // adapter
-    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    // 拦截器
+    api 'com.squareup.okhttp3:logging-interceptor:3.6.0'
+    // 沉浸状态栏
+    api 'com.jaeger.statusbarutil:library:1.5.1'
     // Gson
     implementation 'com.google.code.gson:gson:2.8.2'
+    // Retrofit2
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    // Gson转换器
     implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
 }
