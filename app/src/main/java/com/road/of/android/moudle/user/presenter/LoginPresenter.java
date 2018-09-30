@@ -5,11 +5,8 @@ import android.util.Log;
 import com.road.of.android.bean.LoginDto;
 import com.road.of.android.biz.service.ServiceBuild;
 import com.road.of.android.moudle.user.contract.LoginContract;
+import com.td.framework.biz.ApiSubscriber;
 import com.td.framework.biz.BaseApi;
-
-import org.reactivestreams.Subscriber;
-
-import io.reactivex.subscribers.ResourceSubscriber;
 
 /**
  * 登陆Presenter
@@ -24,11 +21,13 @@ public class LoginPresenter extends LoginContract.Presenter {
 
     @Override
     public void login(String userName, String password) {
+        // 取消上次请求
+        unDisposable();
         // 开始请求
-        Subscriber subscriber = ServiceBuild.getUserService()
+        mDisposable = ServiceBuild.getUserService()
                 .login(userName, password)
                 .compose(BaseApi.<LoginDto>getScheduler())
-                .subscribeWith(new ResourceSubscriber<LoginDto>() {
+                .subscribeWith(new ApiSubscriber<LoginDto>() {
                     @Override
                     public void onNext(LoginDto loginDto) {
                         //结果回调
@@ -41,16 +40,6 @@ public class LoginPresenter extends LoginContract.Presenter {
 
                     }
 
-                    @Override
-                    public void onError(Throwable t) {
-                        Log.e(TAG, "onError: ");
-                        view.loginFailure("登陆失败：" + t.getMessage());
-                    }
-
-                    @Override
-                    public void onComplete() {
-                        Log.e(TAG, "onComplete: ");
-                    }
                 });
     }
 }

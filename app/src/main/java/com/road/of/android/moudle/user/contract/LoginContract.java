@@ -1,6 +1,7 @@
 package com.road.of.android.moudle.user.contract;
 
 import com.road.of.android.bean.LoginDto;
+import com.td.framework.mvp.BasePresenter;
 
 /**
  * 登陆合约类
@@ -22,7 +23,7 @@ public interface LoginContract {
         void loginFailure(String message);
     }
 
-    abstract class Presenter {
+    abstract class Presenter extends BasePresenter{
         /**
          * 持有View层
          */
@@ -39,5 +40,6 @@ public interface LoginContract {
          * @param password 密码
          */
         public abstract void login(String userName, String password);
+
     }
 }
