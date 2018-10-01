@@ -15,7 +15,7 @@
         android:background="@drawable/dialog_shar_bg"
         android:clickable="true"
         android:focusable="true"
-        android:minHeight="150dp"
+        android:minHeight="125dp"
         android:orientation="vertical"
         android:paddingTop="22dp">
 
@@ -27,17 +27,17 @@
             android:src="@mipmap/icon_dialgo_complete" />
 
 
-
         <TextView
             android:id="@+id/tv_dialog_message"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="@dimen/dp_4"
-            android:paddingRight="@dimen/dp_4"
-            android:paddingTop="@dimen/margin"
             android:layout_weight="1"
             android:gravity="center_horizontal"
             android:lineSpacingExtra="@dimen/dp_4"
+            android:paddingBottom="@dimen/margin"
+            android:paddingLeft="@dimen/dp_4"
+            android:paddingRight="@dimen/dp_4"
+            android:paddingTop="@dimen/margin"
             android:text="重置密码成功"
             android:textColor="#333"
             android:textSize="14sp" />
