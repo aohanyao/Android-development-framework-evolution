@@ -10,5 +10,5 @@ public interface OnDialogConfirmListener {
      * 确定按钮点击的回调
      * @param dialog 弹窗
      */
-    void onDailogConfirmListener(AlertDialog dialog);
+    void onDialogConfirmListener(AlertDialog dialog);
 }

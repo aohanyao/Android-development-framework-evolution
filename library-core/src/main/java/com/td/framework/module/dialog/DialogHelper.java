@@ -225,7 +225,7 @@ public class DialogHelper implements DialogInterface.OnCancelListener {
                     @Override
                     public void onClick(View v) {
                         if (confirmListener != null) {
-                            confirmListener.onDailogConfirmListener(mDialog);
+                            confirmListener.onDialogConfirmListener(mDialog);
                         }
                     }
                 });
@@ -283,7 +283,7 @@ public class DialogHelper implements DialogInterface.OnCancelListener {
     @Override
     public void onCancel(DialogInterface dialog) {
         if (mDialogCancelListener != null) {
-            mDialogCancelListener.onDailogCancelListener(mDialog);
+            mDialogCancelListener.onDialogCancelListener(mDialog);
         }
     }
 }

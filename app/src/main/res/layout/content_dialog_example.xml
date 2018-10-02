@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,4 +9,43 @@
     tools:context=".moudle.example.DialogExampleActivity"
     tools:showIn="@layout/activity_dialog_example">
 
-</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/ButtonClickStyle"
+            android:onClick="showLoadingDialog"
+            android:text="showLoadingDialog" />
+
+        <TextView
+            style="@style/ButtonClickStyle"
+            android:onClick="showMessageDialog"
+            android:text="showMessageDialog" />
+
+        <TextView
+            style="@style/ButtonClickStyle"
+            android:onClick="showSuccessDialog"
+            android:text="showSuccessDialog" />
+
+        <TextView
+            style="@style/ButtonClickStyle"
+            android:onClick="showWarningDialog"
+            android:text="showWarningDialog" />
+
+        <TextView
+            style="@style/ButtonClickStyle"
+            android:onClick="showErrorDialog"
+            android:text="showErrorDialog" />
+
+        <TextView
+            style="@style/ButtonClickStyle"
+            android:onClick="showConfirmDialog"
+            android:text="showConfirmDialog" />
+
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

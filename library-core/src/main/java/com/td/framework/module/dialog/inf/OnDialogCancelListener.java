@@ -11,5 +11,5 @@ public interface OnDialogCancelListener {
      *
      * @param dialog 弹窗
      */
-    void onDailogCancelListener(AlertDialog dialog);
+    void onDialogCancelListener(AlertDialog dialog);
 }
