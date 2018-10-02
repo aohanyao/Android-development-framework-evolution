@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:layout_gravity="center">
+
+
+    <LinearLayout
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="@dimen/margin"
+        android:background="@drawable/dialog_shar_bg"
+        android:clickable="true"
+        android:focusable="true"
+        android:minHeight="125dp"
+        android:orientation="vertical"
+        android:paddingTop="22dp">
+
+        <ProgressBar
+            android:layout_width="57dp"
+            android:layout_height="57dp"
+            android:layout_gravity="center_horizontal" />
+
+
+        <TextView
+            android:id="@+id/tv_dialog_loading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="@dimen/dp_4"
+            android:paddingBottom="@dimen/margin"
+            android:paddingLeft="@dimen/dp_4"
+            android:paddingRight="@dimen/dp_4"
+            android:paddingTop="@dimen/margin"
+            android:text="正在提交数据..."
+            android:textColor="#333"
+            android:textSize="14sp" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

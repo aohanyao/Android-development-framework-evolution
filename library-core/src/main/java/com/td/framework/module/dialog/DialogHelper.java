@@ -70,7 +70,7 @@ public class DialogHelper implements DialogInterface.OnCancelListener {
      * @param loadingTip 信息提示
      */
     public void showLoadingDialog(String loadingTip) {
-
+        showLoadingDialog(loadingTip, true);
     }
 
     /**
@@ -80,7 +80,11 @@ public class DialogHelper implements DialogInterface.OnCancelListener {
      * @param cancelable 能不能点击空白的地方
      */
     public void showLoadingDialog(String loadingTip, Boolean cancelable) {
-
+        //解析布局
+        View mDialogView = mInflater.inflate(R.layout.dialog_loading_layout, null);
+        //消息
+        mDialogView.<TextView>findViewById(R.id.tv_dialog_loading).setText(loadingTip);
+        createAndShowDialog(mDialogView, cancelable);
     }
 
     /**
