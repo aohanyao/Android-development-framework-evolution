@@ -6,28 +6,27 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".MainActivity"
-    tools:showIn="@layout/activity_main">
+    tools:context=".moudle.example.ToastExampleActivityActivity"
+    tools:showIn="@layout/activity_toast_example_activity">
 
     <TextView
         style="@style/ButtonClickStyle"
-        android:onClick="loginPage"
-        android:text="Login Page" />
+        android:onClick="showSystemStringTextToast"
+        android:text="showSystemStringTextToast" />
+
+    <TextView
+        style="@style/ButtonClickStyle"
+        android:onClick="showSystemStringResToast"
+        android:text="showSystemStringResToast" />
 
 
     <TextView
         style="@style/ButtonClickStyle"
-        android:onClick="dialogExample"
-        android:text="Dialog Example" />
-
-
-    <TextView
-        style="@style/ButtonClickStyle"
-        android:onClick="toastExample"
-        android:text="Toast Example" />
+        android:onClick="showCustomizeStringTextToast"
+        android:text="showCustomizeStringTextToast" />
 
     <TextView
         style="@style/ButtonClickStyle"
-        android:onClick="logExample"
-        android:text="Log Example" />
+        android:onClick="showCustomizeStringResToast"
+        android:text="showCustomizeStringResToast" />
 </LinearLayout>

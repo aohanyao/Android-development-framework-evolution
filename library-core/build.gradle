@@ -8,8 +8,8 @@ android {
     defaultConfig {
         minSdkVersion 19
         targetSdkVersion 26
-        versionCode 105
-        versionName "v0.05"
+        versionCode 106
+        versionName "v0.06"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -42,9 +42,11 @@ dependencies {
     // 沉浸状态栏
     api 'com.jaeger.statusbarutil:library:1.5.1'
     // Gson
-    implementation 'com.google.code.gson:gson:2.8.2'
+    api 'com.google.code.gson:gson:2.8.2'
     // Retrofit2
-    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    api 'com.squareup.retrofit2:retrofit:2.4.0'
     // Gson转换器
-    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    api 'com.squareup.retrofit2:converter-gson:2.3.0'
+    // logger
+    api 'com.orhanobut:logger:2.2.0'
 }

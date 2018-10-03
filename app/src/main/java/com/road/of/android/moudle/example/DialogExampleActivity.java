@@ -32,6 +32,7 @@ public class DialogExampleActivity extends AppCompatActivity implements OnDialog
      */
     private void initToolBar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back_white_24dp);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,7 +40,6 @@ public class DialogExampleActivity extends AppCompatActivity implements OnDialog
                 finish();
             }
         });
-        setSupportActionBar(toolbar);
     }
 
 

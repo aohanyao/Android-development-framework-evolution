@@ -28,6 +28,14 @@
         <activity
             android:name=".moudle.example.DialogExampleActivity"
             android:label="@string/title_activity_dialog_example"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".moudle.example.ToastExampleActivityActivity"
+            android:label="@string/title_activity_toast_example_activity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".moudle.example.LogExampleActivity"
+            android:label="@string/title_activity_log_example"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

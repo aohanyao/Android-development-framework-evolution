@@ -1,7 +1,6 @@
 package com.road.of.android.moudle.user;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -12,7 +11,6 @@ import android.widget.Toast;
 import com.jaeger.library.StatusBarUtil;
 import com.road.of.android.R;
 import com.road.of.android.bean.LoginDto;
-import com.road.of.android.moudle.example.DialogExampleActivity;
 import com.road.of.android.moudle.user.contract.LoginContract;
 import com.road.of.android.moudle.user.presenter.LoginPresenter;
 import com.td.framework.module.dialog.DialogHelper;
@@ -39,13 +37,6 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
             mDialogHelper = new DialogHelper(LoginActivity.this, this);
         }
 
-        findViewById(R.id.tv_dialog_example).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // 跳转到 例子页面 🌰
-                startActivity(new Intent(LoginActivity.this, DialogExampleActivity.class));
-            }
-        });
     }
 
 
