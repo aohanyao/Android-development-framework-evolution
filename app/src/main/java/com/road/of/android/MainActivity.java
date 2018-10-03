@@ -1,9 +1,8 @@
 package com.road.of.android;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Pair;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,10 +11,10 @@ import com.road.of.android.moudle.example.DialogExampleActivity;
 import com.road.of.android.moudle.example.LogExampleActivity;
 import com.road.of.android.moudle.example.ToastExampleActivityActivity;
 import com.road.of.android.moudle.user.LoginActivity;
+import com.td.framework.base.activity.CandyBaseActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends CandyBaseActivity {
 
-    private MainActivity mActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,20 +48,29 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void logExample(View view) {
-        startActivity(new Intent(mActivity, LogExampleActivity.class));
+//        startActivity(new Intent(mActivity, LogExampleActivity.class));
+        launchActivity(LogExampleActivity.class);
     }
 
     public void toastExample(View view) {
-        startActivity(new Intent(mActivity, ToastExampleActivityActivity.class));
+//        startActivity(new Intent(mActivity, ToastExampleActivityActivity.class));
+        launchActivity(ToastExampleActivityActivity.class,
+                new Pair<String, Object>("key1", "value1"),
+                new Pair<String, Object>("key1", "value1"));
     }
 
     public void dialogExample(View view) {
         // 弹窗
-        startActivity(new Intent(mActivity, DialogExampleActivity.class));
+//        startActivity(new Intent(mActivity, DialogExampleActivity.class));
+        launchActivity(DialogExampleActivity.class);
     }
 
     public void loginPage(View view) {
         //跳转到登录页面
-        startActivity(new Intent(mActivity, LoginActivity.class));
+//        startActivity(new Intent(mActivity, LoginActivity.class));
+        launchActivityForResult(LoginActivity.class,
+                200,
+                new Pair<String, Object>("key1", "value1"),
+                new Pair<String, Object>("key1", "value1"));
     }
 }

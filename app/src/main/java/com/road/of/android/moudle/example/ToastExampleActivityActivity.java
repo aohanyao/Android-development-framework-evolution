@@ -1,20 +1,21 @@
 package com.road.of.android.moudle.example;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.road.of.android.R;
+import com.td.framework.base.activity.CandyBaseActivity;
 import com.td.framework.utils.T;
 
-public class ToastExampleActivityActivity extends AppCompatActivity {
+public class ToastExampleActivityActivity extends CandyBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_toast_example_activity);
         initToolBar();
+        showToast(getIntent().getStringExtra("key1"));
     }
 
     /**
