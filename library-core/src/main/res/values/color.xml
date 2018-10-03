@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="white">#fff</color>
+    <color name="trans_t">#00000000</color>
+    <color name="black">#000</color>
 </resources>

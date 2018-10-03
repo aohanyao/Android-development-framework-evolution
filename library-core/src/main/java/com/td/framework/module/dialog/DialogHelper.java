@@ -112,7 +112,7 @@ public class DialogHelper implements DialogInterface.OnCancelListener {
      * @param message 提示信息的内容
      */
     public void showSuccessDialog(String message) {
-        createHasIconDialog(R.mipmap.icon_dialgo_complete, message, null);
+        createHasIconDialog(R.mipmap.icon_dialog_success, message, null);
     }
 
     /**
@@ -122,7 +122,7 @@ public class DialogHelper implements DialogInterface.OnCancelListener {
      * @param confirmListener 确认按钮点击的回调
      */
     public void showSuccessDialog(String message, OnDialogConfirmListener confirmListener) {
-        createHasIconDialog(R.mipmap.icon_dialgo_complete, message, confirmListener);
+        createHasIconDialog(R.mipmap.icon_dialog_success, message, confirmListener);
     }
 
     /**
@@ -131,7 +131,7 @@ public class DialogHelper implements DialogInterface.OnCancelListener {
      * @param message 提示信息的内容
      */
     public void showWarningDialog(String message) {
-        createHasIconDialog(R.mipmap.icon_dialgo_warning, message, null);
+        createHasIconDialog(R.mipmap.icon_dialog_warning, message, null);
     }
 
     /**
@@ -141,7 +141,7 @@ public class DialogHelper implements DialogInterface.OnCancelListener {
      * @param confirmListener 确认按钮点击的回调
      */
     public void showWarningDialog(String message, OnDialogConfirmListener confirmListener) {
-        createHasIconDialog(R.mipmap.icon_dialgo_warning, message, confirmListener);
+        createHasIconDialog(R.mipmap.icon_dialog_warning, message, confirmListener);
     }
 
     /**
@@ -150,7 +150,7 @@ public class DialogHelper implements DialogInterface.OnCancelListener {
      * @param message 提示信息的内容
      */
     public void showErrorDialog(String message) {
-        createHasIconDialog(R.mipmap.icon_dialgo_complete, message, null);
+        createHasIconDialog(R.mipmap.icon_dialog_error, message, null);
     }
 
     /**
@@ -160,7 +160,7 @@ public class DialogHelper implements DialogInterface.OnCancelListener {
      * @param confirmListener 确认按钮点击的回调
      */
     public void showErrorDialog(String message, OnDialogConfirmListener confirmListener) {
-        createHasIconDialog(R.mipmap.icon_dialgo_complete, message, confirmListener);
+        createHasIconDialog(R.mipmap.icon_dialog_error, message, confirmListener);
     }
 
     /**
@@ -175,8 +175,38 @@ public class DialogHelper implements DialogInterface.OnCancelListener {
     public void showConfirmDialog(String message,
                                   String confirmText,
                                   String cancelText,
-                                  OnDialogConfirmListener confirmListener,
-                                  OnDialogCancelListener cancelListener) {
+                                  final OnDialogConfirmListener confirmListener,
+                                  final OnDialogCancelListener cancelListener) {
+
+        //解析布局
+        View mDialogView = mInflater.inflate(R.layout.dialog_confirm_layout, null);
+        //消息
+        mDialogView.<TextView>findViewById(R.id.tv_dialog_message).setText(message);
+
+        // 确定按钮
+        Button confirmButton = mDialogView.findViewById(R.id.btn_confirm);
+        initActionButton(confirmButton, confirmText, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (confirmListener != null) {
+                    confirmListener.onDialogConfirmListener(mDialog);
+                }
+            }
+        });
+
+        // 取消按钮
+        Button cancelButton = mDialogView.findViewById(R.id.btn_cancel);
+        initActionButton(cancelButton, cancelText, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (cancelListener != null) {
+                    cancelListener.onDialogCancelListener(mDialog);
+                }
+            }
+        });
+
+        // 创建和显示弹窗
+        createAndShowDialog(mDialogView, false);
 
     }
 
@@ -193,6 +223,7 @@ public class DialogHelper implements DialogInterface.OnCancelListener {
                                   String cancelText,
                                   OnDialogConfirmListener confirmListener) {
 
+        showConfirmDialog(message, confirmText, cancelText, confirmListener, null);
     }
 
     /**
@@ -203,6 +234,7 @@ public class DialogHelper implements DialogInterface.OnCancelListener {
      */
     public void showConfirmDialog(String message,
                                   OnDialogConfirmListener confirmListener) {
+        showConfirmDialog(message, "确定", "取消", confirmListener, null);
     }
 
 
@@ -241,6 +273,8 @@ public class DialogHelper implements DialogInterface.OnCancelListener {
      * 创建和显示弹窗
      */
     private void createAndShowDialog(View mContentView, Boolean cancelable) {
+        // 先关闭之前的弹窗
+        dismissDialog();
         //创建弹窗
         mDialog = new AlertDialog.Builder(mActivity, mStyle)
                 .setView(mContentView)

@@ -42,7 +42,7 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_margin="10dp"
-        android:background="@drawable/bg_login_botton"
+        android:background="@drawable/bg_login_button"
         android:text="登录"
         android:textColor="#fff"
         android:textSize="15sp" />
@@ -52,7 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_margin="@dimen/margin"
-        android:background="@drawable/bg_login_botton"
+        android:background="@drawable/bg_login_button"
         android:gravity="center"
         android:text="Dialog Example"
         android:textColor="@color/white" />

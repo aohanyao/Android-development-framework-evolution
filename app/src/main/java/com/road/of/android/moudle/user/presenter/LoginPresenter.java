@@ -8,6 +8,11 @@ import com.road.of.android.moudle.user.contract.LoginContract;
 import com.td.framework.biz.ApiSubscriber;
 import com.td.framework.biz.BaseApi;
 
+import java.util.concurrent.TimeUnit;
+
+import io.reactivex.Flowable;
+import io.reactivex.functions.Function;
+
 /**
  * 登陆Presenter
  */
@@ -20,12 +25,19 @@ public class LoginPresenter extends LoginContract.Presenter {
     }
 
     @Override
-    public void login(String userName, String password) {
+    public void login(final String userName, final String password) {
         // 取消上次请求
         unDisposable();
         // 开始请求
-        mDisposable = ServiceBuild.getUserService()
-                .login(userName, password)
+        mDisposable = Flowable.timer(2, TimeUnit.SECONDS)
+                .flatMap(//这里是为了加一个延时效果
+                        new Function<Long, Flowable<LoginDto>>() {
+                            @Override
+                            public Flowable<LoginDto> apply(Long aLong) throws Exception {
+                                return ServiceBuild.getUserService()
+                                        .login(userName, password);
+                            }
+                        })
                 .compose(BaseApi.<LoginDto>getScheduler())
                 .subscribeWith(new ApiSubscriber<LoginDto>() {
                     @Override

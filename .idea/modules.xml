@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/RoadOfAndroid.iml" filepath="$PROJECT_DIR$/RoadOfAndroid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Android-development-framework-evolution.iml" filepath="$PROJECT_DIR$/Android-development-framework-evolution.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/library-core/library-core.iml" filepath="$PROJECT_DIR$/library-core/library-core.iml" />
     </modules>

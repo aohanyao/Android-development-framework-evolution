@@ -84,7 +84,17 @@ public class DialogExampleActivity extends AppCompatActivity implements OnDialog
     }
 
     public void showConfirmDialog(View view) {
-//        mDialogHelper.showConfirmDialog("ConfirmDialog");
+        mDialogHelper.showConfirmDialog("ConfirmDialog", "确定", "取消", new OnDialogConfirmListener() {
+            @Override
+            public void onDialogConfirmListener(AlertDialog dialog) {
+                showToast("confirm");
+            }
+        }, new OnDialogCancelListener() {
+            @Override
+            public void onDialogCancelListener(AlertDialog dialog) {
+                showToast("cancel");
+            }
+        });
     }
 
 
