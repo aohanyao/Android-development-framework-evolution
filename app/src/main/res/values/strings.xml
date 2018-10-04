@@ -7,4 +7,6 @@
     <string name="show_customize_string_res_toast">showCustomizeStringResToast</string>
     <string name="title_activity_log_example">Log示例</string>
     <string name="nav_call_back">返回</string>
+    <string name="title_activity_create_candy_base_activity">测试创建</string>
+    <string name="title_activity_create_candy_base">测试创建</string>
 </resources>

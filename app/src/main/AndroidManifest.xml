@@ -36,7 +36,11 @@
         <activity
             android:name=".module.example.LogExampleActivity"
             android:label="@string/title_activity_log_example"
-            android:theme="@style/AppTheme.ToolbarHeight"/>
+            android:theme="@style/AppTheme.ToolbarHeight" />
+        <activity
+            android:name=".module.example.CreateCandyBaseActivity"
+            android:label="@string/title_activity_create_candy_base"
+            android:theme="@style/AppTheme.ToolbarHeight"></activity>
     </application>
 
 </manifest>

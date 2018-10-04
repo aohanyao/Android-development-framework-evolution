@@ -30,4 +30,9 @@
         style="@style/ButtonClickStyle"
         android:onClick="logExample"
         android:text="Log Example" />
+
+    <TextView
+        style="@style/ButtonClickStyle"
+        android:onClick="createCandyBaseActivity"
+        android:text="CreateCandyBaseActivity" />
 </LinearLayout>

@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.road.of.android.module.example.CreateCandyBaseActivity;
 import com.road.of.android.module.example.DialogExampleActivity;
 import com.road.of.android.module.example.LogExampleActivity;
 import com.road.of.android.module.example.ToastExampleActivityActivity;
@@ -72,5 +73,9 @@ public class MainActivity extends CandyBaseActivity {
                 200,
                 new Pair<String, Object>("key1", "value1"),
                 new Pair<String, Object>("key1", "value1"));
+    }
+
+    public void createCandyBaseActivity(View view) {
+        launchActivity(CreateCandyBaseActivity.class);
     }
 }
