@@ -44,6 +44,7 @@ public class LoginPresenter extends LoginContract.Presenter {
                     public void onNext(LoginDto loginDto) {
                         //结果回调
                         Log.e(TAG, "onNext: " + loginDto);
+                        view.onComplete();
                         if (loginDto.getCode() == 200) {
                             view.loginSuccess(loginDto);
                         } else {

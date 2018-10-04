@@ -1,4 +1,4 @@
-package com.td.framework.mvp;
+package com.td.framework.mvp.presenter;
 
 import io.reactivex.disposables.Disposable;
 

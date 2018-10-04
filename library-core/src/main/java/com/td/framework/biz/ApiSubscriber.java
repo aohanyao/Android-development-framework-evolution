@@ -1,6 +1,6 @@
 package com.td.framework.biz;
 
-import com.td.framework.mvp.BaseView;
+import com.td.framework.mvp.view.BaseView;
 
 import io.reactivex.subscribers.ResourceSubscriber;
 

@@ -3,7 +3,6 @@ package com.road.of.android.moudle.user;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -13,15 +12,15 @@ import com.road.of.android.R;
 import com.road.of.android.bean.LoginDto;
 import com.road.of.android.moudle.user.contract.LoginContract;
 import com.road.of.android.moudle.user.presenter.LoginPresenter;
-import com.td.framework.module.dialog.DialogHelper;
 import com.td.framework.module.dialog.inf.OnDialogCancelListener;
+import com.td.framework.mvp.base.activity.MVPBaseActivity;
 
-public class LoginActivity extends AppCompatActivity implements LoginContract.View, OnDialogCancelListener {
+public class LoginActivity extends MVPBaseActivity<LoginPresenter> implements LoginContract.View, OnDialogCancelListener {
 
     private String TAG = "LoginActivity";
 
-    private LoginPresenter mLoginPresenter;
-    private DialogHelper mDialogHelper;
+    //    private LoginPresenter mLoginPresenter;
+//    private DialogHelper mDialogHelper;
 
 
     @Override
@@ -29,13 +28,13 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         StatusBarUtil.setTranslucentForImageView(this, null);
-        mLoginPresenter = new LoginPresenter(this);
+//        mLoginPresenter = new LoginPresenter(this);
         initEvent();
 
 
-        if (mDialogHelper == null) {
-            mDialogHelper = new DialogHelper(LoginActivity.this, this);
-        }
+//        if (mDialogHelper == null) {
+//            mDialogHelper = new DialogHelper(LoginActivity.this, this);
+//        }
 
     }
 
@@ -57,8 +56,9 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
                 String password = etPassword.getText().toString();
                 //登录
 //                Toast.makeText(LoginActivity.this, "正在登陆", Toast.LENGTH_SHORT).show();
-                mDialogHelper.showLoadingDialog("正在登陆");
-                mLoginPresenter.login(account, password);
+                /*mDialogHelper.*/showLoadingDialog("正在登陆");
+//                mLoginPresenter.login(account, password);
+                getP().login(account, password);
 
             }
         });
@@ -67,14 +67,10 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
     @Override
     public void loginSuccess(LoginDto loginDto) {
 //        Toast.makeText(this, "登陆成功：" + loginDto.toString(), Toast.LENGTH_SHORT).show();
-        mDialogHelper.showSuccessDialog("登陆成功：" + loginDto.toString());
+        /*mDialogHelper.*/
+        showSuccessDialog("登陆成功：" + loginDto.toString());
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        mLoginPresenter.unDisposable();
-    }
 
     @Override
     public void loginFailure(String message) {
@@ -83,7 +79,11 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
 
     @Override
     public void onDialogCancelListener(AlertDialog dialog) {
-        mLoginPresenter.unDisposable();
         Toast.makeText(this, "取消登陆", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected LoginPresenter createPresenter() {
+        return new LoginPresenter(this);
     }
 }

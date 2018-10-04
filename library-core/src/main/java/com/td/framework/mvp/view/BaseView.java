@@ -1,4 +1,4 @@
-package com.td.framework.mvp;
+package com.td.framework.mvp.view;
 
 /**
  * 基类View，对统一的接口进行定义

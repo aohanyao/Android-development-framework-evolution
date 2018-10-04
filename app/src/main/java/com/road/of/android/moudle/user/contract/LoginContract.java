@@ -1,13 +1,14 @@
 package com.road.of.android.moudle.user.contract;
 
 import com.road.of.android.bean.LoginDto;
-import com.td.framework.mvp.BasePresenter;
+import com.td.framework.mvp.presenter.BasePresenter;
+import com.td.framework.mvp.view.BaseView;
 
 /**
  * 登陆合约类
  */
 public interface LoginContract {
-    interface View {
+    interface View extends BaseView{
         /**
          * 登陆成功
          *

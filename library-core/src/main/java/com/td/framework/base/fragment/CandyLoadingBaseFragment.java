@@ -1,4 +1,4 @@
-package com.td.framework.base.activity;
+package com.td.framework.base.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,17 +9,17 @@ import com.td.framework.module.dialog.inf.OnDialogCancelListener;
 import com.td.framework.module.dialog.inf.OnDialogConfirmListener;
 
 /**
- * 有弹窗的BaseActivity
+ * 有弹窗的BaseFragment
  * ----------------------------
- * v0.1 2018年10月04日11:44:03
+ * v0.1 2018年10月04日15:04:23
  * 创建完成
  * ----------------------------
  */
-public class CandyLoadingBaseActivity extends CandyBaseActivity implements OnDialogCancelListener {
+public class CandyLoadingBaseFragment extends CandyBaseFragment implements OnDialogCancelListener {
     protected DialogHelper mDialogHelper;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (mDialogHelper == null) {
             mDialogHelper = new DialogHelper(mActivity, this);

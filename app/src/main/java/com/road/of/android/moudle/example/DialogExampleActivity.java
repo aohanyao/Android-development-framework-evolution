@@ -93,6 +93,12 @@ public class DialogExampleActivity extends CandyLoadingBaseActivity {
 //
 //    }
 
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
     @Override
     public void onDialogCancelListener(AlertDialog dialog) {
         Toast.makeText(this, "弹窗关闭", Toast.LENGTH_SHORT).show();
