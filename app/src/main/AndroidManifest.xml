@@ -23,20 +23,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".moudle.user.LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:name=".module.user.LoginActivity"
+            android:theme="@style/AppTheme.ToolbarHeight" />
         <activity
-            android:name=".moudle.example.DialogExampleActivity"
+            android:name=".module.example.DialogExampleActivity"
             android:label="@string/title_activity_dialog_example"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.ToolbarHeight" />
         <activity
-            android:name=".moudle.example.ToastExampleActivityActivity"
+            android:name=".module.example.ToastExampleActivityActivity"
             android:label="@string/title_activity_toast_example_activity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.ToolbarHeight" />
         <activity
-            android:name=".moudle.example.LogExampleActivity"
+            android:name=".module.example.LogExampleActivity"
             android:label="@string/title_activity_log_example"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.ToolbarHeight"/>
     </application>
 
 </manifest>

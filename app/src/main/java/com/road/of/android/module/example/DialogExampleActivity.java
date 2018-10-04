@@ -1,4 +1,4 @@
-package com.road.of.android.moudle.example;
+package com.road.of.android.module.example;
 
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;

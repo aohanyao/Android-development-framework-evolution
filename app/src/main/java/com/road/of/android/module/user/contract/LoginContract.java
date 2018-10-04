@@ -1,4 +1,4 @@
-package com.road.of.android.moudle.user.contract;
+package com.road.of.android.module.user.contract;
 
 import com.road.of.android.bean.LoginDto;
 import com.td.framework.mvp.presenter.BasePresenter;

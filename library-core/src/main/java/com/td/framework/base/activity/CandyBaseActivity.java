@@ -54,9 +54,11 @@ public class CandyBaseActivity extends AppCompatActivity {
     private void initToolbar() {
         Toolbar mToolbar = findViewById(R.id.base_toolbar);
         if (null != mToolbar) {
-            //设置返回按钮
+            // 清除标题
+            mToolbar.setTitle("");
             setSupportActionBar(mToolbar);
             mToolbar.setBackgroundColor(getToolbarBackground());
+            //设置返回按钮
             mToolbar.setNavigationIcon(getNavigationIcon());
             mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
                 @Override
@@ -65,11 +67,22 @@ public class CandyBaseActivity extends AppCompatActivity {
                 }
             });
             isInitToolbar = true;
+            //返回文字按钮
+            View navText = findViewById(R.id.toolbar_nav_text);
+            if (null != navText) {
+                navText.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        onNavigationOnClickListener();
+                    }
+                });
+            }
         }
     }
 
     /**
      * 获取toolbar的背景
+     *
      * @return
      */
     private int getToolbarBackground() {
@@ -90,7 +103,7 @@ public class CandyBaseActivity extends AppCompatActivity {
      * @return
      */
     protected int getNavigationIcon() {
-        return R.drawable.ic_arrow_back_white_24dp;
+        return R.drawable.ic_chevron_left_write_24dp;
     }
 
     /**

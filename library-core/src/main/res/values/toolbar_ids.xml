@@ -2,4 +2,6 @@
 <resources>
     <item name="base_toolbar" type="id" />
     <item name="base_appbar" type="id" />
+    <item name="tv_toolbar_title" type="id" />
+    <item name="toolbar_nav_text" type="id" />
 </resources>

@@ -1,4 +1,4 @@
-package com.road.of.android.moudle.user;
+package com.road.of.android.module.user;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -10,8 +10,8 @@ import android.widget.Toast;
 import com.jaeger.library.StatusBarUtil;
 import com.road.of.android.R;
 import com.road.of.android.bean.LoginDto;
-import com.road.of.android.moudle.user.contract.LoginContract;
-import com.road.of.android.moudle.user.presenter.LoginPresenter;
+import com.road.of.android.module.user.contract.LoginContract;
+import com.road.of.android.module.user.presenter.LoginPresenter;
 import com.td.framework.module.dialog.inf.OnDialogCancelListener;
 import com.td.framework.mvp.base.activity.MVPBaseActivity;
 

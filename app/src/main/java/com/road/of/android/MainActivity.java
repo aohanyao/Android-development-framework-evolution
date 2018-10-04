@@ -7,10 +7,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.road.of.android.moudle.example.DialogExampleActivity;
-import com.road.of.android.moudle.example.LogExampleActivity;
-import com.road.of.android.moudle.example.ToastExampleActivityActivity;
-import com.road.of.android.moudle.user.LoginActivity;
+import com.road.of.android.module.example.DialogExampleActivity;
+import com.road.of.android.module.example.LogExampleActivity;
+import com.road.of.android.module.example.ToastExampleActivityActivity;
+import com.road.of.android.module.user.LoginActivity;
 import com.td.framework.base.activity.CandyBaseActivity;
 
 public class MainActivity extends CandyBaseActivity {

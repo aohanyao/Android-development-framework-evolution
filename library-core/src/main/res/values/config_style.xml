@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!--标题栏 导航文字颜色-->
+    <color name="ToolbarNavTextColor">#fff</color>
+    <!--标题栏 标题文字颜色-->
+    <color name="ToolbarTitleTextColor">#fff</color>
+    <!--标题栏 阴影线颜色-->
+    <color name="ToolbarLineColor">#eeeeee</color>
+    <!--导航文字大小-->
+    <dimen name="ToolbarNavTextSize">15sp</dimen>
+    <!--标题文字大小-->
+    <dimen name="ToolbarTitleTextSize">18sp</dimen>
+    <!--标题栏的高度-->
+    <dimen name="AppBarLayoutHeight">44dp</dimen>
+    <!--导航文字距离左边的边距-->
+    <dimen name="ToolbarNavTextMarginLeft">12dp</dimen>
+
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="BaseAppBarLayoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:theme">@style/AppTheme.AppBarOverlay</item>
+        <!--这里设置 标题栏的颜色-->
+        <item name="android:id">@id/base_appbar</item>
+    </style>
+
+
+    <!--标题栏的样式-->
+    <style name="BaseToolbarStyle" parent="Widget.AppCompat.Toolbar">
+        <!--内容距离开始 边距-->
+        <item name="contentInsetStart">8dp</item>
+        <!--内容距离 导航按钮 边距-->
+        <item name="contentInsetStartWithNavigation">8dp</item>
+        <!--使自定义view可以贴左右的边，多数版本的系统不要下面两句也可以，但少量版本必须加下面的两句-->
+        <item name="android:paddingLeft">8dp</item>
+        <!--右内边距-->
+        <item name="android:paddingRight">0dp</item>
+        <!--最小高度-->
+        <item name="android:minHeight">?actionBarSize</item>
+        <!--高度-->
+        <item name="android:layout_height">?actionBarSize</item>
+        <!--id-->
+        <item name="android:id">@id/base_toolbar</item>
+        <!--宽度-->
+        <item name="android:layout_width">match_parent</item>
+        <item name="actionMenuTextColor">#000</item>
+    </style>
+
+    <style name="ToolBarTitleStyle">
+        <!--标题栏 标题样式-->
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@null</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:id">@id/tv_toolbar_title</item>
+    </style>
+
+    <!--标题栏返回按钮样式-->
+    <style name="ToolbarNavigationButtonStyle" parent="Widget.AppCompat.Toolbar.Button.Navigation">
+        <item name="android:minWidth">16dp</item>
+    </style>
+    <style name="ToolBarNavTextStyle">
+        <!--标题栏返回文字样式-->
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <!--返回按钮和返回文字之间的间隔-->
+        <item name="android:layout_marginLeft">2dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:textColor">@color/ToolbarNavTextColor</item>
+        <item name="android:textSize">@dimen/ToolbarNavTextSize</item>
+        <item name="android:id">@id/toolbar_nav_text</item>
+    </style>
+    <style name="AppTheme.ToolbarHeight">
+        <!--修改了标题栏默认样式的样式
+        修改了返回按钮的边距
+        -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="toolbarNavigationButtonStyle">@style/ToolbarNavigationButtonStyle</item>
+        <!--NavigationIcon的宽度-->
+        <item name="toolbarStyle">@style/BaseToolbarStyle</item>
+    </style>
+</resources>
