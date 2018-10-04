@@ -1,7 +1,6 @@
 package com.road.of.android.moudle.example;
 
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.road.of.android.R;
@@ -14,24 +13,9 @@ public class ToastExampleActivityActivity extends CandyBaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_toast_example_activity);
-        initToolBar();
         showToast(getIntent().getStringExtra("key1"));
     }
 
-    /**
-     * toolbar
-     */
-    private void initToolBar() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        toolbar.setNavigationIcon(R.drawable.ic_arrow_back_white_24dp);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-    }
 
     public void showSystemStringResToast(View view) {
         T.showSystemToast(getApplicationContext(), R.string.show_system_string_res_toast);

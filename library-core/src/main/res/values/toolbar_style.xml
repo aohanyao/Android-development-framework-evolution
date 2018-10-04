@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="BaseAppBarLayoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:theme">@style/AppTheme.AppBarOverlay</item>
+        <!--这里设置 标题栏的颜色-->
+        <item name="android:id">@id/base_appbar</item>
+    </style>
+
+
+    <!--标题栏的样式-->
+    <style name="BaseToolbarStyle" parent="Widget.AppCompat.Toolbar">
+        <!--高度-->
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <!--id-->
+        <item name="android:id">@id/base_toolbar</item>
+        <!--宽度-->
+        <item name="android:layout_width">match_parent</item>
+        <!--背景颜色-->
+        <item name="android:background">?attr/colorPrimary</item>
+    </style>
+</resources>

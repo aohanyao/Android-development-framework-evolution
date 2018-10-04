@@ -49,4 +49,6 @@ dependencies {
     api 'com.squareup.retrofit2:converter-gson:2.3.0'
     // logger
     api 'com.orhanobut:logger:2.2.0'
+    // design
+    api 'com.android.support:design:26.0.2'
 }
