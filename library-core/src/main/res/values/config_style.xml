@@ -14,6 +14,12 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="AppThemeMain" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+    </style>
+
     <!--标题栏 导航文字颜色-->
     <color name="ToolbarNavTextColor">#fff</color>
     <!--标题栏 标题文字颜色-->
@@ -78,6 +84,7 @@
     <style name="ToolbarNavigationButtonStyle" parent="Widget.AppCompat.Toolbar.Button.Navigation">
         <item name="android:minWidth">16dp</item>
     </style>
+
     <style name="ToolBarNavTextStyle">
         <!--标题栏返回文字样式-->
         <item name="android:layout_width">wrap_content</item>
@@ -90,6 +97,7 @@
         <item name="android:textSize">@dimen/ToolbarNavTextSize</item>
         <item name="android:id">@id/toolbar_nav_text</item>
     </style>
+
     <style name="AppTheme.ToolbarHeight">
         <!--修改了标题栏默认样式的样式
         修改了返回按钮的边距
@@ -99,5 +107,6 @@
         <item name="toolbarNavigationButtonStyle">@style/ToolbarNavigationButtonStyle</item>
         <!--NavigationIcon的宽度-->
         <item name="toolbarStyle">@style/BaseToolbarStyle</item>
+        <item name="android:windowIsTranslucent">true</item>
     </style>
 </resources>

@@ -24,6 +24,7 @@ public class MainActivity extends CandyBaseActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         mActivity = this;
+        getSwipeBackLayout().setEnableGesture(false);
     }
 
     @Override

@@ -4,12 +4,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Pair;
 import android.view.View;
 
 import com.road.android.core.R;
+import com.td.framework.ui.swipebacklayout.SwipeBackLayout;
+import com.td.framework.ui.swipebacklayout.app.SwipeBackActivity;
 import com.td.framework.utils.T;
 import com.td.framework.utils.anim.ActivityAnimUtils;
 import com.td.framework.utils.data.IntentUtils;
@@ -24,7 +25,7 @@ import com.td.framework.utils.data.IntentUtils;
  * ④initToolbar
  * -------------------------------
  */
-public class CandyBaseActivity extends AppCompatActivity {
+public class CandyBaseActivity extends SwipeBackActivity {
 
     protected Activity mActivity;
 
@@ -32,6 +33,7 @@ public class CandyBaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mActivity = this;
+        initSwipeActivity();
     }
 
     /**
@@ -46,6 +48,10 @@ public class CandyBaseActivity extends AppCompatActivity {
         if (!isInitToolbar) {
             initToolbar();
         }
+    }
+
+    private void initSwipeActivity() {
+        getSwipeBackLayout().setEdgeTrackingEnabled(SwipeBackLayout.EDGE_LEFT);
     }
 
     /**
