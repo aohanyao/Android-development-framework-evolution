@@ -37,7 +37,7 @@ RxJava2入门文章请看[这可能是最好的RxJava 2.x 教程（完结版）]
 # 本系列文章
 - [ ] Android 之路  (0)  - 序章
 - [ ] [Android 之路 (1) - RxJava2+Retrofit实现简单登陆](http://fullscreendeveloper.cn/articles/2018/10/08/1538984930011.html)
-- [ ] Android 之路 (2) -  对登陆进行 MVP 改造
+- [ ] [Android 之路 (2) -  对登陆进行 MVP 改造](http://fullscreendeveloper.cn/articles/2018/10/09/1539084359439.html)
 - [ ] Android 之路 (3) - 对Retrofit的封装
 - [ ] Android 之路 (4) - 对RxJava2的简单封装
 - [ ] Android 之路 (5) - 对Dialog的简单封装
