@@ -35,4 +35,9 @@
         style="@style/ButtonClickStyle"
         android:onClick="createCandyBaseActivity"
         android:text="CreateCandyBaseActivity" />
+
+    <TextView
+        style="@style/ButtonClickStyle"
+        android:onClick="statusToolBar"
+        android:text="StatusToolBar" />
 </LinearLayout>

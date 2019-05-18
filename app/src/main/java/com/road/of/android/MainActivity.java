@@ -10,6 +10,7 @@ import android.view.View;
 import com.road.of.android.module.example.CreateCandyBaseActivity;
 import com.road.of.android.module.example.DialogExampleActivity;
 import com.road.of.android.module.example.LogExampleActivity;
+import com.road.of.android.module.example.StatusToolBarActivity;
 import com.road.of.android.module.example.ToastExampleActivityActivity;
 import com.road.of.android.module.user.LoginActivity;
 import com.td.framework.base.activity.CandyBaseActivity;
@@ -78,5 +79,10 @@ public class MainActivity extends CandyBaseActivity {
 
     public void createCandyBaseActivity(View view) {
         launchActivity(CreateCandyBaseActivity.class);
+    }
+
+    public void statusToolBar(View view) {
+        // 标题栏
+        launchActivity(StatusToolBarActivity.class);
     }
 }

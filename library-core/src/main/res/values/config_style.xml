@@ -31,7 +31,7 @@
     <!--标题文字大小-->
     <dimen name="ToolbarTitleTextSize">18sp</dimen>
     <!--标题栏的高度-->
-    <dimen name="AppBarLayoutHeight">44dp</dimen>
+    <dimen name="AppBarLayoutHeight">48dp</dimen>
     <!--导航文字距离左边的边距-->
     <dimen name="ToolbarNavTextMarginLeft">12dp</dimen>
 
@@ -60,7 +60,7 @@
         <!--最小高度-->
         <item name="android:minHeight">?actionBarSize</item>
         <!--高度-->
-        <item name="android:layout_height">?actionBarSize</item>
+        <item name="android:layout_height">@dimen/toolbar_height</item>
         <!--id-->
         <item name="android:id">@id/base_toolbar</item>
         <!--宽度-->

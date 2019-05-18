@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.road.of.android">
 
@@ -41,6 +40,14 @@
             android:name=".module.example.CreateCandyBaseActivity"
             android:label="@string/title_activity_create_candy_base"
             android:theme="@style/AppTheme.ToolbarHeight"></activity>
-    </application>
 
+        <activity
+            android:name="com.road.of.android.module.example.StatusToolBarActivity"
+            android:label="@string/title_activity_status_tool_bar"
+            android:theme="@style/AppTheme.ToolbarHeight" />
+        <activity
+            android:name="com.road.of.android.module.example.StatusToolBa2Activity"
+            android:label="@string/title_activity_status_tool_ba2"
+            android:theme="@style/AppTheme.ToolbarHeight" />
+    </application>
 </manifest>

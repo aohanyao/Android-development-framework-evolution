@@ -9,4 +9,6 @@
     <string name="nav_call_back">返回</string>
     <string name="title_activity_create_candy_base_activity">测试创建</string>
     <string name="title_activity_create_candy_base">测试创建</string>
+    <string name="title_activity_status_tool_bar">标题栏适配</string>
+    <string name="title_activity_status_tool_ba2">第二个沉浸状态栏</string>
 </resources>

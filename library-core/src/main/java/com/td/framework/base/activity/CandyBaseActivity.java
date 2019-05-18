@@ -29,6 +29,8 @@ public class CandyBaseActivity extends SwipeBackActivity {
 
     protected Activity mActivity;
 
+    protected Toolbar mToolBar;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,15 +60,15 @@ public class CandyBaseActivity extends SwipeBackActivity {
      * 初始化toolbar
      */
     private void initToolbar() {
-        Toolbar mToolbar = findViewById(R.id.base_toolbar);
-        if (null != mToolbar) {
+        mToolBar = findViewById(R.id.base_toolbar);
+        if (null != mToolBar) {
             // 清除标题
-            mToolbar.setTitle("");
-            setSupportActionBar(mToolbar);
-            mToolbar.setBackgroundColor(getToolbarBackground());
+            mToolBar.setTitle("");
+            setSupportActionBar(mToolBar);
+            mToolBar.setBackgroundColor(getToolbarBackground());
             //设置返回按钮
-            mToolbar.setNavigationIcon(getNavigationIcon());
-            mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            mToolBar.setNavigationIcon(getNavigationIcon());
+            mToolBar.setNavigationOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     onNavigationOnClickListener();
