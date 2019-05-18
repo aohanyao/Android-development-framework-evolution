@@ -1,13 +1,18 @@
 package com.td.framework.base.activity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.AppBarLayout;
 import android.support.v7.widget.Toolbar;
 import android.util.Pair;
 import android.view.View;
+import android.view.ViewGroup;
 
+import com.jaeger.library.StatusBarUtil;
 import com.road.android.core.R;
 import com.td.framework.ui.swipebacklayout.SwipeBackLayout;
 import com.td.framework.ui.swipebacklayout.app.SwipeBackActivity;
@@ -62,10 +67,14 @@ public class CandyBaseActivity extends SwipeBackActivity {
     private void initToolbar() {
         mToolBar = findViewById(R.id.base_toolbar);
         if (null != mToolBar) {
+            // 设置为透明色
+            mToolBar.setBackgroundColor(0x00000000);
+            // 设置全透明
+            mToolBar.getBackground().setAlpha(0);
             // 清除标题
             mToolBar.setTitle("");
             setSupportActionBar(mToolBar);
-            mToolBar.setBackgroundColor(getToolbarBackground());
+//            mToolBar.setBackgroundColor(getToolbarBackground());
             //设置返回按钮
             mToolBar.setNavigationIcon(getNavigationIcon());
             mToolBar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -86,6 +95,40 @@ public class CandyBaseActivity extends SwipeBackActivity {
                 });
             }
         }
+
+        // appbar
+        AppBarLayout mAppBarLayout = findViewById(R.id.base_appbar);
+        // 状态栏高度 getStatusBarHeight只是一个获取高度的方法
+        int statusBarHeight = getStatusBarHeight(mActivity);
+        //大于 19  设置沉浸和padding
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            if (mAppBarLayout != null) {
+                ViewGroup.MarginLayoutParams appbarLayoutParam = (ViewGroup.MarginLayoutParams) mAppBarLayout.getLayoutParams();
+                // 更改高度 toolbar_height 的高度是可配置的
+                appbarLayoutParam.height = (int) (getResources().getDimension(R.dimen.toolbar_height) + statusBarHeight);
+                // 设置padding
+                mAppBarLayout.setPadding(mAppBarLayout.getPaddingLeft(),
+                        statusBarHeight,
+                        mAppBarLayout.getPaddingRight(),
+                        mAppBarLayout.getPaddingBottom());
+
+                //重新设置回去
+                mAppBarLayout.setLayoutParams(appbarLayoutParam);
+            }
+        }
+        // 设置沉浸和状态栏的颜色为透明
+        StatusBarUtil.setTranslucentForImageView(this, 0, null);
+    }
+    /**
+     * 获取状态栏高度
+     *
+     * @param context context
+     * @return 状态栏高度
+     */
+    private int getStatusBarHeight(Context context) {
+        // 获得状态栏高度
+        int resourceId = context.getResources().getIdentifier("status_bar_height", "dimen", "android");
+        return context.getResources().getDimensionPixelSize(resourceId);
     }
 
     /**
