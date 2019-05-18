@@ -35,7 +35,7 @@ UI方面主要以Design包为基准，网络及异步操作选用RxJava2+Retrofi
 RxJava2入门文章请看[这可能是最好的RxJava 2.x 教程（完结版）](https://www.jianshu.com/p/0cd258eecf60)
 
 # 本系列文章
-- [ ] Android 之路  (0)  - 序章
+- [x] [Android 之路 (0) - 序章](Android 之路 (0)  - 序章.md)
 - [x] [Android 之路 (1) - RxJava2+Retrofit实现简单登陆](http://fullscreendeveloper.cn/articles/2018/10/08/1538984930011.html)
 - [x] [Android 之路 (2) - 对登陆进行 MVP 改造](http://fullscreendeveloper.cn/articles/2018/10/09/1539084359439.html)
 - [x] [Android 之路 (3) - 对Retrofit的封装](http://fullscreendeveloper.cn/articles/2018/10/10/1539167974165.html)
@@ -44,6 +44,12 @@ RxJava2入门文章请看[这可能是最好的RxJava 2.x 教程（完结版）]
 - [x] [Android 之路 (6) - 关于Toast和Log的封装](http://fullscreendeveloper.cn/articles/2018/11/07/1541580610117.html)
 - [x] [Android 之路 (7) - 对BaseActivity的简单封装](http://fullscreendeveloper.cn/articles/2019/05/06/1557135966652.html)
 - [x] [Android 之路 (8) - Toolbar - NavigationIcon间隙、Title居中、BackText适配](http://fullscreendeveloper.cn/articles/2019/05/17/1558090070765.html)
+
+# 其他
+## 什么时候更新
+> 不定时更新，看工作情况吧。
+> 更新的时候会在微信公众号、个人博客、简书同步更新。
+> 每次文章都会对应一个release版本，下载源码的时候注意对应某个版本。
 
 # 微信公众号
 > 扫描二维码，关注公众号，时不时会悄悄的推送一些小技巧的文章~~
