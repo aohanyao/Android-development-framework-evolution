@@ -36,12 +36,16 @@ RxJava2入门文章请看[这可能是最好的RxJava 2.x 教程（完结版）]
 
 # 本系列文章
 - [ ] Android 之路  (0)  - 序章
-- [ ] [Android 之路 (1) - RxJava2+Retrofit实现简单登陆](http://fullscreendeveloper.cn/articles/2018/10/08/1538984930011.html)
-- [ ] [Android 之路 (2) -  对登陆进行 MVP 改造](http://fullscreendeveloper.cn/articles/2018/10/09/1539084359439.html)
-- [ ] Android 之路 (3) - 对Retrofit的封装
-- [ ] Android 之路 (4) - 对RxJava2的简单封装
-- [ ] Android 之路 (5) - 对Dialog的简单封装
-- [ ] Android 之路 (6) - 关于Toast和Log
-- [ ] Android 之路 (7) - 对BaseActivity的简单封装
+- [x] [Android 之路 (1) - RxJava2+Retrofit实现简单登陆](http://fullscreendeveloper.cn/articles/2018/10/08/1538984930011.html)
+- [x] [Android 之路 (2) - 对登陆进行 MVP 改造](http://fullscreendeveloper.cn/articles/2018/10/09/1539084359439.html)
+- [x] [Android 之路 (3) - 对Retrofit的封装](http://fullscreendeveloper.cn/articles/2018/10/10/1539167974165.html)
+- [x] [Android 之路 (4) - 对RxJava2的简单封装](http://fullscreendeveloper.cn/articles/2018/10/11/1539255083332.html)
+- [x] [Android 之路 (5) - 对Dialog的简单封装](http://fullscreendeveloper.cn/articles/2018/10/13/1539412875888.html)
+- [x] [Android 之路 (6) - 关于Toast和Log的封装](http://fullscreendeveloper.cn/articles/2018/11/07/1541580610117.html)
+- [x] [Android 之路 (7) - 对BaseActivity的简单封装](http://fullscreendeveloper.cn/articles/2019/05/06/1557135966652.html)
+- [x] [Android 之路 (8) - Toolbar - NavigationIcon间隙、Title居中、BackText适配](http://fullscreendeveloper.cn/articles/2019/05/17/1558090070765.html)
 
+# 微信公众号
+> 扫描二维码，关注公众号，时不时会悄悄的推送一些小技巧的文章~~
 
+![AndroidRookie](https://avatars1.githubusercontent.com/u/13215774?s=460&v=4)
