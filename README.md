@@ -58,6 +58,8 @@ RxJava2入门文章请看[这可能是最好的RxJava 2.x 教程（完结版）]
 - [x] [Android 之路 (6) - 关于Toast和Log的封装](http://fullscreendeveloper.cn/articles/2018/11/07/1541580610117.html)
 - [x] [Android 之路 (7) - 对BaseActivity的简单封装](http://fullscreendeveloper.cn/articles/2019/05/06/1557135966652.html)
 - [x] [Android 之路 (8) - Toolbar - NavigationIcon间隙、Title居中、BackText适配](http://fullscreendeveloper.cn/articles/2019/05/17/1558090070765.html)
+- [x] [Android 之路 (9) - 第一个AS工程代码模板](http://fullscreendeveloper.cn/articles/2019/05/19/1558235126435.html)
+
 
 # 其他
 ## 什么时候更新
@@ -74,5 +76,6 @@ RxJava2入门文章请看[这可能是最好的RxJava 2.x 教程（完结版）]
 
 # 微信公众号
 > 扫描二维码，关注公众号，时不时会悄悄的推送一些小技巧的文章~~
+> 如果我的文章和代码对你有了帮助，请给我一个star和关注~~
 
 ![AndroidRookie](https://avatars1.githubusercontent.com/u/13215774?s=460&v=4)
