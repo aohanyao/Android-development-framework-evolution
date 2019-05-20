@@ -29,6 +29,12 @@ import com.td.framework.utils.data.IntentUtils;
  * ③跳转动画
  * ④initToolbar
  * -------------------------------
+ *
+ * -------------------------------
+ * v0.2 2019年05月20日10:24:16
+ * ①增加了统一ToolBar的封装
+ * ②适配了异形屏，全面沉浸
+ * -------------------------------
  */
 public class CandyBaseActivity extends SwipeBackActivity {
 
@@ -36,18 +42,17 @@ public class CandyBaseActivity extends SwipeBackActivity {
 
     protected Toolbar mToolBar;
 
+    /**
+     * 是否初始化了toolbar
+     */
+    private boolean isInitToolbar = false;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mActivity = this;
         initSwipeActivity();
     }
-
-    /**
-     * 是否初始化了toolbar
-     */
-    private boolean isInitToolbar = false;
-
 
     @Override
     protected void onStart() {
@@ -57,14 +62,13 @@ public class CandyBaseActivity extends SwipeBackActivity {
         }
     }
 
-    private void initSwipeActivity() {
-        getSwipeBackLayout().setEdgeTrackingEnabled(SwipeBackLayout.EDGE_LEFT);
-    }
 
     /**
-     * 初始化toolbar
+     * 初始化toolbar<p>
+     * 如果子页面不需要初始化ToolBar，请直接覆写本方法做空操作即可
+     * </p>
      */
-    private void initToolbar() {
+    protected void initToolbar() {
         mToolBar = findViewById(R.id.base_toolbar);
         if (null != mToolBar) {
             // 设置为透明色
@@ -74,9 +78,11 @@ public class CandyBaseActivity extends SwipeBackActivity {
             // 清除标题
             mToolBar.setTitle("");
             setSupportActionBar(mToolBar);
-//            mToolBar.setBackgroundColor(getToolbarBackground());
-            //设置返回按钮
-            mToolBar.setNavigationIcon(getNavigationIcon());
+            // 子类中没有设置过返回按钮的情况下
+            if (mToolBar.getNavigationIcon() == null) {
+                //设置返回按钮
+                mToolBar.setNavigationIcon(getNavigationIcon());
+            }
             mToolBar.setNavigationOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -95,7 +101,6 @@ public class CandyBaseActivity extends SwipeBackActivity {
                 });
             }
         }
-
         // appbar
         AppBarLayout mAppBarLayout = findViewById(R.id.base_appbar);
         // 状态栏高度 getStatusBarHeight只是一个获取高度的方法
@@ -119,6 +124,16 @@ public class CandyBaseActivity extends SwipeBackActivity {
         // 设置沉浸和状态栏的颜色为透明
         StatusBarUtil.setTranslucentForImageView(this, 0, null);
     }
+
+    /**
+     * 返回按钮
+     * 子类通过覆写本方法返回需要设置的返回按钮，也可以直接在xml中直接赋值
+     * @return
+     */
+    protected int getNavigationIcon() {
+        return R.drawable.ic_chevron_left_write_24dp;
+    }
+
     /**
      * 获取状态栏高度
      *
@@ -131,14 +146,6 @@ public class CandyBaseActivity extends SwipeBackActivity {
         return context.getResources().getDimensionPixelSize(resourceId);
     }
 
-    /**
-     * 获取toolbar的背景
-     *
-     * @return
-     */
-    private int getToolbarBackground() {
-        return getResources().getColor(R.color.colorPrimary);
-    }
 
     /**
      * 返回按钮点击
@@ -148,14 +155,6 @@ public class CandyBaseActivity extends SwipeBackActivity {
         slideLeftOut();
     }
 
-    /**
-     * 返回按钮
-     *
-     * @return
-     */
-    protected int getNavigationIcon() {
-        return R.drawable.ic_chevron_left_write_24dp;
-    }
 
     /**
      * 显示文本信息
@@ -200,6 +199,10 @@ public class CandyBaseActivity extends SwipeBackActivity {
     public void onBackPressed() {
         super.onBackPressed();
         slideLeftOut();
+    }
+
+    private void initSwipeActivity() {
+        getSwipeBackLayout().setEdgeTrackingEnabled(SwipeBackLayout.EDGE_LEFT);
     }
 
     /**

@@ -13,6 +13,7 @@
 
         <android.support.v7.widget.Toolbar
             style="@style/BaseToolbarStyle"
+            app:navigationIcon="@drawable/ic_arrow_back_white_24dp"
             app:popupTheme="@style/AppTheme.PopupOverlay">
 
             <TextView
