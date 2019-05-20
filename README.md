@@ -59,6 +59,7 @@ RxJava2入门文章请看[这可能是最好的RxJava 2.x 教程（完结版）]
 - [x] [Android 之路 (7) - 对BaseActivity的简单封装](http://fullscreendeveloper.cn/articles/2019/05/06/1557135966652.html)
 - [x] [Android 之路 (8) - Toolbar - NavigationIcon间隙、Title居中、BackText适配](http://fullscreendeveloper.cn/articles/2019/05/17/1558090070765.html)
 - [x] [Android 之路 (9) - 第一个AS工程代码模板](http://fullscreendeveloper.cn/articles/2019/05/19/1558235126435.html)
+- [x] [Android 之路 (10) - 集成滑动返回(SwipeBackLayout)](http://fullscreendeveloper.cn/articles/2019/05/20/1558344854226.html)
 
 
 # 其他
