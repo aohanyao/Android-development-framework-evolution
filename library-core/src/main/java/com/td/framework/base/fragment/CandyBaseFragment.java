@@ -4,12 +4,12 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.util.Pair;
 
 import com.td.framework.utils.T;
 import com.td.framework.utils.anim.ActivityAnimUtils;
 import com.td.framework.utils.data.IntentUtils;
+import com.trello.rxlifecycle2.components.support.RxFragment;
 
 /**
  * 最基本的Fragment
@@ -20,7 +20,7 @@ import com.td.framework.utils.data.IntentUtils;
  * ③跳转动画
  * -------------------------------
  */
-public class CandyBaseFragment extends Fragment {
+public class CandyBaseFragment extends RxFragment {
 
     protected Activity mActivity;
 

@@ -2,18 +2,18 @@
 package com.td.framework.ui.swipebacklayout.app;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.td.framework.ui.swipebacklayout.SwipeBackLayout;
 import com.td.framework.ui.swipebacklayout.SwipeBackUtils;
+import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
 
 /**
  * 可滑动
  * link:https://github.com/ikew0ng/SwipeBackLayout
  */
-public class SwipeBackActivity extends AppCompatActivity implements SwipeBackActivityBase {
+public class SwipeBackActivity extends RxAppCompatActivity implements SwipeBackActivityBase {
     private SwipeBackActivityHelper mHelper;
 
     @Override

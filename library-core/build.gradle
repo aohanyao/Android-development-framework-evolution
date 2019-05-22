@@ -4,15 +4,11 @@ android {
     compileSdkVersion 26
 
 
-
     defaultConfig {
         minSdkVersion 19
         targetSdkVersion 26
         versionCode 110
         versionName "v0.10"
-
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
     }
 
     buildTypes {
@@ -27,16 +23,15 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     // RxJava
-    api 'io.reactivex.rxjava2:rxjava:2.2.2'
+    api ('io.reactivex.rxjava2:rxjava:2.2.3'){
+        exclude group: 'android.appcompat'
+    }
     // RxAndroid
-    api 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    api 'io.reactivex.rxjava2:rxandroid:2.1.0'
     // adapter
-    api 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.5.0'
     // 拦截器
     api 'com.squareup.okhttp3:logging-interceptor:3.6.0'
     // 沉浸状态栏
@@ -44,12 +39,16 @@ dependencies {
     // Gson
     api 'com.google.code.gson:gson:2.8.2'
     // Retrofit2
-    api 'com.squareup.retrofit2:retrofit:2.4.0'
+    api 'com.squareup.retrofit2:retrofit:2.5.0'
     // Gson转换器
-    api 'com.squareup.retrofit2:converter-gson:2.3.0'
+    api 'com.squareup.retrofit2:converter-gson:2.5.0'
     // logger
     api 'com.orhanobut:logger:2.2.0'
     // design
     api 'com.android.support:design:26.0.2'
+    //
+    api 'com.trello.rxlifecycle2:rxlifecycle:2.2.1'
+    api 'com.trello.rxlifecycle2:rxlifecycle-android:2.2.1'
+    api 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.1'
 
 }

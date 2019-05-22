@@ -6,7 +6,6 @@ import com.road.of.android.bean.LoginDto;
 import com.road.of.android.biz.service.ServiceBuild;
 import com.road.of.android.module.user.contract.LoginContract;
 import com.td.framework.biz.ApiSubscriber;
-import com.td.framework.biz.BaseApi;
 
 import java.util.concurrent.TimeUnit;
 
@@ -38,7 +37,7 @@ public class LoginPresenter extends LoginContract.Presenter {
                                         .login(userName, password);
                             }
                         })
-                .compose(BaseApi.<LoginDto>getScheduler())
+                .compose(this.<LoginDto>getScheduler())
                 .subscribeWith(new ApiSubscriber<LoginDto>() {
                     @Override
                     public void onNext(LoginDto loginDto) {
