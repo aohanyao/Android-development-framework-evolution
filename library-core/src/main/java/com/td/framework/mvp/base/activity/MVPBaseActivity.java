@@ -58,7 +58,7 @@ abstract public class MVPBaseActivity<P extends BasePresenter> extends CandyLoad
 
     @Override
     public void onFailure(String message) {
-//        showWarningDialog(message);
+        showWarningDialog(message);
         // 暂不实现，后面有一篇文章：统一错误管理
     }
 }

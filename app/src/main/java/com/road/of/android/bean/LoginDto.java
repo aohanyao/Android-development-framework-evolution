@@ -50,8 +50,8 @@ public class LoginDto {
         private String userName;
         private String nickName;
         private String header;
-        private int age;
-        private int sex;
+        private String age;
+        private String sex;
         private String phone;
         private String email;
 
@@ -79,19 +79,19 @@ public class LoginDto {
             this.header = header;
         }
 
-        public int getAge() {
+        public String getAge() {
             return age;
         }
 
-        public void setAge(int age) {
+        public void setAge(String age) {
             this.age = age;
         }
 
-        public int getSex() {
+        public String getSex() {
             return sex;
         }
 
-        public void setSex(int sex) {
+        public void setSex(String sex) {
             this.sex = sex;
         }
 

@@ -8,7 +8,7 @@ import com.td.framework.mvp.view.BaseView;
  * 登陆合约类
  */
 public interface LoginContract {
-    interface View extends BaseView{
+    interface View extends BaseView {
         /**
          * 登陆成功
          *
@@ -24,13 +24,14 @@ public interface LoginContract {
         void loginFailure(String message);
     }
 
-    abstract class Presenter extends BasePresenter{
+    abstract class Presenter extends BasePresenter {
         /**
          * 持有View层
          */
         protected View view;
 
         public Presenter(View view) {
+            super(view);
             this.view = view;
         }
 

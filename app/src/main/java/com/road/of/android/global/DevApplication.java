@@ -17,7 +17,7 @@ public class DevApplication extends Application {
         BaseApi.registerConfig(new NetConfig() {
             @Override
             public String configBaseUrl() {
-                return "http://olrt5mymy.bkt.clouddn.com/";
+                return "http://qiniu.fullscreendeveloper.cn/";
             }
 
             @Override

@@ -24,7 +24,7 @@ public class LogExampleActivity extends CandyBaseActivity {
 
     public void jsonLog(View view) {
         LoginDto.UserInfo userInfo = new LoginDto.UserInfo();
-        userInfo.setAge(25);
+        userInfo.setAge("25");
         userInfo.setEmail("aohanyao@gmail.com");
         userInfo.setNickName("aohanyao");
         userInfo.setUserName("aohanyao");

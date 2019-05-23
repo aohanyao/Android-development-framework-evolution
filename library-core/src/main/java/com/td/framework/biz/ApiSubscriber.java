@@ -29,7 +29,8 @@ public abstract class ApiSubscriber<T> extends ResourceSubscriber<T> {
     @Override
     public void onComplete() {
         if (null != view) {
-            view.onComplete();
+//            view.onComplete();
+            // 不回调，防止弹窗被关闭了
         }
     }
 }
