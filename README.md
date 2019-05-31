@@ -60,6 +60,8 @@ RxJava2入门文章请看[这可能是最好的RxJava 2.x 教程（完结版）]
 - [x] [Android 之路 (8) - Toolbar - NavigationIcon间隙、Title居中、BackText适配](http://fullscreendeveloper.cn/articles/2019/05/17/1558090070765.html)
 - [x] [Android 之路 (9) - 第一个AS工程代码模板](http://fullscreendeveloper.cn/articles/2019/05/19/1558235126435.html)
 - [x] [Android 之路 (10) - 集成滑动返回(SwipeBackLayout)](http://fullscreendeveloper.cn/articles/2019/05/20/1558344854226.html)
+- [x] [Android 之路 (11) - 对Toolbar的封装-实现渐变标题栏与沉浸适配](http://fullscreendeveloper.cn/articles/2019/05/23/1558614398661.html)
+- [x] [Android 之路 (12) - RxLifecycle的集成](http://fullscreendeveloper.cn/articles/2019/05/31/1559294685034.html)
 
 
 # 其他
