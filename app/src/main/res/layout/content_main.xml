@@ -40,4 +40,9 @@
         style="@style/ButtonClickStyle"
         android:onClick="statusToolBar"
         android:text="StatusToolBar" />
+
+    <TextView
+        style="@style/ButtonClickStyle"
+        android:onClick="handlerResponseError"
+        android:text="HandlerResponseError" />
 </LinearLayout>

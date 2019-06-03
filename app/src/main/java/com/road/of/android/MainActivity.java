@@ -8,6 +8,7 @@ import android.view.View;
 
 import com.road.of.android.module.example.CreateCandyBaseActivity;
 import com.road.of.android.module.example.DialogExampleActivity;
+import com.road.of.android.module.example.HandlerResponseErrorActivity;
 import com.road.of.android.module.example.LogExampleActivity;
 import com.road.of.android.module.example.StatusToolBarActivity;
 import com.road.of.android.module.example.ToastExampleActivityActivity;
@@ -81,5 +82,10 @@ public class MainActivity extends CandyBaseActivity {
     public void statusToolBar(View view) {
         // 标题栏
         launchActivity(StatusToolBarActivity.class);
+    }
+
+    public void handlerResponseError(View view) {
+        // 统一错误处理
+        launchActivity(HandlerResponseErrorActivity.class);
     }
 }

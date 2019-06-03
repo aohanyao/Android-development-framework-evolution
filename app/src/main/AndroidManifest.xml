@@ -49,5 +49,9 @@
             android:name="com.road.of.android.module.example.StatusToolBa2Activity"
             android:label="@string/title_activity_status_tool_ba2"
             android:theme="@style/AppTheme.ToolbarHeight" />
+        <activity
+            android:name="com.road.of.android.module.example.HandlerResponseErrorActivity"
+            android:label="@string/title_activity_handler_error"
+            android:theme="@style/AppTheme.ToolbarHeight" />
     </application>
 </manifest>
