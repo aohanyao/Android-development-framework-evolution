@@ -61,7 +61,8 @@ public abstract class ApiSubscriber<T> extends ResourceSubscriber<T> {
     protected void onFail(NetErrorException error) {
         //
         if (view != null) {
-            view.onFailure(error.getMessage());
+            view.onFailure(error);
+            view.onComplete();
         }
     }
 

@@ -34,7 +34,9 @@ import retrofit2.Converter;
 final class HandlerGsonResponseBodyConverter<T> implements Converter<ResponseBody, T> {
     private final TypeAdapter<T> adapter;
 
-    /**模拟的假数据*/
+    /**
+     * 模拟的假数据
+     */
     private final List<String> mockResult;
 
     private final Random random;
@@ -62,12 +64,12 @@ final class HandlerGsonResponseBodyConverter<T> implements Converter<ResponseBod
                 // 这里模拟不同的数据结构
                 jsonString = mockResult.get(resultIndex);
 
-                Log.e("TAG", "这里进行了返回结果的判断");
+                Log.e("TAG", "这里进行了返回结果的判断:" + jsonString);
                 // ------------------ JsonObject 只做了初略的判断，具体情况自定
                 JSONObject object = new JSONObject(jsonString);
                 int code = object.getInt("code");
                 if (code != 200) {
-//                    throw new NetErrorException(object.getString("message"), code);
+                    throw new NetErrorException(object.getString("message"), code);
                 }
                 return adapter.fromJson(object.getString("data"));
 

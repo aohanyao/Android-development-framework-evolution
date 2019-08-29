@@ -77,7 +77,8 @@ public abstract class BasePresenter {
                 if (bindUntilEvent != null) {
                     //绑定
                     flowable = observable.subscribeOn(Schedulers.io())
-                            .observeOn(AndroidSchedulers.mainThread()).compose(bindUntilEvent);
+                            .observeOn(AndroidSchedulers.mainThread())
+                            .compose(bindUntilEvent);
                 }
                 return flowable;
             }

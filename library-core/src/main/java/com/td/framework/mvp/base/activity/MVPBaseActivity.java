@@ -3,6 +3,7 @@ package com.td.framework.mvp.base.activity;
 import android.support.v7.app.AlertDialog;
 
 import com.td.framework.base.activity.CandyLoadingBaseActivity;
+import com.td.framework.module.exception.NetErrorException;
 import com.td.framework.mvp.presenter.BasePresenter;
 import com.td.framework.mvp.view.BaseView;
 
@@ -57,8 +58,7 @@ abstract public class MVPBaseActivity<P extends BasePresenter> extends CandyLoad
     }
 
     @Override
-    public void onFailure(String message) {
-        showWarningDialog(message);
-        // 暂不实现，后面有一篇文章：统一错误管理
+    public void onFailure(NetErrorException exception) {
+        showWarningDialog(exception.getMessage());
     }
 }
