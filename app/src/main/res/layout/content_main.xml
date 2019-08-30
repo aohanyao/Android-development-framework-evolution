@@ -44,5 +44,5 @@
     <TextView
         style="@style/ButtonClickStyle"
         android:onClick="handlerResponseError"
-        android:text="HandlerResponseError" />
+        android:text="HandlerResponseDataAndError" />
 </LinearLayout>

@@ -34,7 +34,7 @@ public class HandlerResponseErrorActivity extends MVPBaseActivity<HandlerRespons
                 "① 创建自定义Exception类，所有错误统一处理\n" +
                 "② 自定义BodyConverter，在这里对正常返回结果做第一次判断，抛出Exception\n" +
                 "③ 自定义Subscriber，在onError中处理错误\n" +
-                "④ 在error和complete中对结处理，到底是弹窗还是toast等");
+                "④ 回调error到view层，让view对结果处理，到底是弹窗还是toast等");
 
         initEvent();
     }
@@ -54,6 +54,7 @@ public class HandlerResponseErrorActivity extends MVPBaseActivity<HandlerRespons
     @Override
     public void onFailure(NetErrorException exception) {
         mResultTv.append("请求失败：" + exception.getMessage()+"\n");
+        super.onFailure(exception);
     }
 
     @Override

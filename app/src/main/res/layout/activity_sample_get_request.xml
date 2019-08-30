@@ -17,9 +17,6 @@
             app:navigationIcon="@drawable/ic_arrow_back_white_24dp"
             app:popupTheme="@style/AppTheme.PopupOverlay">
 
-            <TextView
-                style="@style/ToolBarNavTextStyle"
-                android:text="@string/nav_call_back" />
 
             <TextView
                 style="@style/ToolBarTitleStyle"
