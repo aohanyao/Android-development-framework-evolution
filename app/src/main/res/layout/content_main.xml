@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,40 +9,52 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <TextView
-        style="@style/ButtonClickStyle"
-        android:onClick="loginPage"
-        android:text="Login Page" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/ButtonClickStyle"
+            android:onClick="loginPage"
+            android:text="Login Page" />
 
 
-    <TextView
-        style="@style/ButtonClickStyle"
-        android:onClick="dialogExample"
-        android:text="Dialog Example" />
+        <TextView
+            style="@style/ButtonClickStyle"
+            android:onClick="dialogExample"
+            android:text="Dialog Example" />
 
 
-    <TextView
-        style="@style/ButtonClickStyle"
-        android:onClick="toastExample"
-        android:text="Toast Example" />
+        <TextView
+            style="@style/ButtonClickStyle"
+            android:onClick="toastExample"
+            android:text="Toast Example" />
 
-    <TextView
-        style="@style/ButtonClickStyle"
-        android:onClick="logExample"
-        android:text="Log Example" />
+        <TextView
+            style="@style/ButtonClickStyle"
+            android:onClick="logExample"
+            android:text="Log Example" />
 
-    <TextView
-        style="@style/ButtonClickStyle"
-        android:onClick="createCandyBaseActivity"
-        android:text="CreateCandyBaseActivity" />
+        <TextView
+            style="@style/ButtonClickStyle"
+            android:onClick="createCandyBaseActivity"
+            android:text="CreateCandyBaseActivity" />
 
-    <TextView
-        style="@style/ButtonClickStyle"
-        android:onClick="statusToolBar"
-        android:text="StatusToolBar" />
+        <TextView
+            style="@style/ButtonClickStyle"
+            android:onClick="statusToolBar"
+            android:text="StatusToolBar" />
 
-    <TextView
-        style="@style/ButtonClickStyle"
-        android:onClick="handlerResponseError"
-        android:text="HandlerResponseDataAndError" />
-</LinearLayout>
+        <TextView
+            style="@style/ButtonClickStyle"
+            android:onClick="handlerResponseError"
+            android:text="HandlerResponseDataAndError" />
+
+        <TextView
+            style="@style/ButtonClickStyle"
+            android:onClick="uploadImage"
+            android:visibility="gone"
+            android:text="UploadImage" />
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

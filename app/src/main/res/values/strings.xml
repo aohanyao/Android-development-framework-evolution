@@ -12,4 +12,8 @@
     <string name="title_activity_status_tool_bar">标题栏适配</string>
     <string name="title_activity_status_tool_ba2">第二个沉浸状态栏</string>
     <string name="title_activity_handler_error">请求结果预处理、多数据结构适配及统一错误处理</string>
+    <string name="title_activity_upload_image">图片上传</string>
+    <string name="title_activity_uploa_image_by_base64">表单文本提交(base64)</string>
+    <string name="title_activity_upload_image_by_multipart">" Multipart提交"</string>
+    <string name="title_activity_upload_image_by_request_body">RequestBody提交</string>
 </resources>

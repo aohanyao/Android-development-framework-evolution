@@ -10,6 +10,7 @@ import com.road.of.android.module.example.HandlerResponseErrorActivity;
 import com.road.of.android.module.example.LogExampleActivity;
 import com.road.of.android.module.example.StatusToolBarActivity;
 import com.road.of.android.module.example.ToastExampleActivityActivity;
+import com.road.of.android.module.upload.UploadImageMainActivity;
 import com.road.of.android.module.user.LoginActivity;
 import com.td.framework.base.activity.CandyBaseActivity;
 
@@ -37,14 +38,14 @@ public class MainActivity extends CandyBaseActivity {
                 new Pair<String, Object>("key1", "value1"));
     }
 
+    // 弹窗
     public void dialogExample(View view) {
-        // 弹窗
 //        startActivity(new Intent(mActivity, DialogExampleActivity.class));
         launchActivity(DialogExampleActivity.class);
     }
 
+    // 跳转到登录页面
     public void loginPage(View view) {
-        //跳转到登录页面
 //        startActivity(new Intent(mActivity, LoginActivity.class));
         launchActivityForResult(LoginActivity.class,
                 200,
@@ -52,17 +53,23 @@ public class MainActivity extends CandyBaseActivity {
                 new Pair<String, Object>("key1", "value1"));
     }
 
+    // 模板创建的activity
     public void createCandyBaseActivity(View view) {
         launchActivity(CreateCandyBaseActivity.class);
     }
 
+    // 标题栏
     public void statusToolBar(View view) {
-        // 标题栏
         launchActivity(StatusToolBarActivity.class);
     }
 
+    // 统一错误处理
     public void handlerResponseError(View view) {
-        // 统一错误处理
         launchActivity(HandlerResponseErrorActivity.class);
+    }
+
+    // 上传图片
+    public void uploadImage(View view) {
+        launchActivity(UploadImageMainActivity.class);
     }
 }
