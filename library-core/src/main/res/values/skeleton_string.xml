@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="candy_loading">加载中...</string>
+    <string name="candy_empty">这里空空如也</string>
+    <string name="candy_retry">网络出现问题啦，点击图标重试!</string>
+</resources>

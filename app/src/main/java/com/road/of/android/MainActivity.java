@@ -10,6 +10,7 @@ import com.road.of.android.module.example.HandlerResponseErrorActivity;
 import com.road.of.android.module.example.LogExampleActivity;
 import com.road.of.android.module.example.StatusToolBarActivity;
 import com.road.of.android.module.example.ToastExampleActivityActivity;
+import com.road.of.android.module.skeleton.SkeletonLayoutActivity;
 import com.road.of.android.module.upload.UploadImageMainActivity;
 import com.road.of.android.module.user.LoginActivity;
 import com.td.framework.base.activity.CandyBaseActivity;
@@ -71,5 +72,10 @@ public class MainActivity extends CandyBaseActivity {
     // 上传图片
     public void uploadImage(View view) {
         launchActivity(UploadImageMainActivity.class);
+    }
+
+    // 骨架图
+    public void skeletonLayout(View view) {
+        launchActivity(SkeletonLayoutActivity.class);
     }
 }

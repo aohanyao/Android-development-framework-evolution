@@ -11,6 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".module.skeleton.SkeletonLayoutActivity"
+            android:label="@string/title_activity_skeleton_layout"
+            android:theme="@style/AppTheme.ToolbarHeight" />
+        <activity
             android:name=".module.upload.UploadImageByRequestBodyActivity"
             android:label="@string/title_activity_upload_image_by_request_body"
             android:theme="@style/AppTheme.ToolbarHeight" />

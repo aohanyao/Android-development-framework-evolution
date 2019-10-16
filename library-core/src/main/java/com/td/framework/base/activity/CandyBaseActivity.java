@@ -5,15 +5,18 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
 import android.support.v7.widget.Toolbar;
 import android.util.Pair;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.jaeger.library.StatusBarUtil;
 import com.road.android.core.R;
+import com.td.framework.ui.skeleton.SkeletonLayout;
 import com.td.framework.ui.swipebacklayout.SwipeBackLayout;
 import com.td.framework.ui.swipebacklayout.app.SwipeBackActivity;
 import com.td.framework.utils.T;
@@ -29,7 +32,7 @@ import com.td.framework.utils.data.IntentUtils;
  * ③跳转动画
  * ④initToolbar
  * -------------------------------
- *
+ * <p>
  * -------------------------------
  * v0.2 2019年05月20日10:24:16
  * ①增加了统一ToolBar的封装
@@ -46,6 +49,10 @@ public class CandyBaseActivity extends SwipeBackActivity {
      * 是否初始化了toolbar
      */
     private boolean isInitToolbar = false;
+    /**
+     * 骨架图
+     */
+    private SkeletonLayout mSkeletonLayout;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -128,6 +135,7 @@ public class CandyBaseActivity extends SwipeBackActivity {
     /**
      * 返回按钮
      * 子类通过覆写本方法返回需要设置的返回按钮，也可以直接在xml中直接赋值
+     *
      * @return
      */
     protected int getNavigationIcon() {
@@ -205,6 +213,43 @@ public class CandyBaseActivity extends SwipeBackActivity {
         getSwipeBackLayout().setEdgeTrackingEnabled(SwipeBackLayout.EDGE_LEFT);
     }
 
+    //----------------------骨架图相关的封装 start--------------------
+
+    /**
+     * 初始化骨架图，需要骨架的地方才会进行初始化，传入的是Activity的根布局
+     *
+     * @param layoutId 根布局
+     * @return 解析好的根布局，增加了骨架图在原本的ViewGroup上面
+     */
+    protected View initSkeletonLayout(@LayoutRes int layoutId) {
+        ViewGroup contentView = (ViewGroup) LayoutInflater.from(mActivity).inflate(layoutId, null, false);
+        mSkeletonLayout = new SkeletonLayout(mActivity);
+        contentView.addView(mSkeletonLayout);
+        return contentView;
+    }
+
+    protected void showSkeletonLoading() {
+        if (mSkeletonLayout != null) {
+            mSkeletonLayout.showSkeletonLoading();
+        }
+    }
+
+    protected void showSkeletonRetry() {
+        if (mSkeletonLayout != null) {
+            mSkeletonLayout.showSkeletonRetry();
+        }
+    }
+
+    protected void showSkeletonEmpty() {
+        if (mSkeletonLayout != null) {
+            mSkeletonLayout.showSkeletonEmpty();
+        }
+    }
+    //----------------------骨架图相关的封装 end----------------------
+
+
+    //----------------------Activity启动相关的封装 start--------------------
+
     /**
      * 打开 Activity
      *
@@ -248,7 +293,8 @@ public class CandyBaseActivity extends SwipeBackActivity {
      * @param activity 目标Activity
      * @param pairs    键值对
      */
-    protected void launchActivityForResult(Class<? extends Activity> activity, int requestCode, Pair<String, Object>... pairs) {
+    @SafeVarargs
+    protected final void launchActivityForResult(Class<? extends Activity> activity, int requestCode, Pair<String, Object>... pairs) {
         Intent intent = new Intent(mActivity, activity);
         // 填充数据
         IntentUtils.fillIntent(intent, pairs);
@@ -256,6 +302,7 @@ public class CandyBaseActivity extends SwipeBackActivity {
         // 加上动画
         slideRightIn();
     }
+    //----------------------Activity启动相关的封装 end--------------------
 
 
 }

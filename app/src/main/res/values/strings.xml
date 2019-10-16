@@ -16,4 +16,5 @@
     <string name="title_activity_uploa_image_by_base64">表单文本提交(base64)</string>
     <string name="title_activity_upload_image_by_multipart">" Multipart提交"</string>
     <string name="title_activity_upload_image_by_request_body">RequestBody提交</string>
+    <string name="title_activity_skeleton_layout">骨架图</string>
 </resources>

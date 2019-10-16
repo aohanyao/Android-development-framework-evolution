@@ -51,4 +51,8 @@ dependencies {
     api 'com.trello.rxlifecycle2:rxlifecycle-android:2.2.1'
     api 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.1'
 
+
+    // 加载动画
+    api 'com.wang.avi:library:1.0.5'
+
 }

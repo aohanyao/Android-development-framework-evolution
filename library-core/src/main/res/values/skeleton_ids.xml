@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--状态布局中的ids-->
+    <!--空布局文字-->
+    <item name="mSkeletonEmptyText" type="id" />
+    <!--空布局图片-->
+    <item name="mSkeletonEmpty" type="id" />
+
+    <!--加载中的文字-->
+    <item name="mSkeletonLoadingText" type="id" />
+    <!--loading-->
+    <item name="mSkeletonLoading" type="id" />
+    <!--重试-->
+    <item name="mSkeletonRetry" type="id" />
+    <!--错误提示-->
+    <item name="mSkeletonRetryText" type="id" />
+    <!---->
+</resources>

@@ -53,8 +53,13 @@
 
         <TextView
             style="@style/ButtonClickStyle"
+            android:onClick="skeletonLayout"
+            android:text="骨架图(SkeletonLayout)" />
+
+        <TextView
+            style="@style/ButtonClickStyle"
             android:onClick="uploadImage"
-            android:visibility="gone"
-            android:text="UploadImage" />
+            android:text="UploadImage"
+            android:visibility="gone" />
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>
