@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:layout_gravity="center"
     android:background="@color/white"
+    android:paddingTop="48dp"
     android:clickable="true"
     android:focusable="true">
 
@@ -17,19 +18,19 @@
         android:layout_below="@id/mSkeletonLoading"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
+        android:visibility="gone"
         android:text="@string/candy_loading"
-        android:textColor="#03a4f9"
-        android:visibility="gone" />
+        android:textColor="#03a4f9" />
 
     <com.wang.avi.AVLoadingIndicatorView
         android:id="@id/mSkeletonLoading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
         android:visibility="visible"
-        app:indicator="LineScale"
+        app:indicator="BallPulse"
         app:indicator_color="#03a4f9" />
 
 </RelativeLayout>

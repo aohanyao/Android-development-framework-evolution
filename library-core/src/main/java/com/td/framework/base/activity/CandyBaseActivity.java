@@ -39,7 +39,7 @@ import com.td.framework.utils.data.IntentUtils;
  * ②适配了异形屏，全面沉浸
  * -------------------------------
  */
-public class CandyBaseActivity extends SwipeBackActivity {
+public class CandyBaseActivity extends SwipeBackActivity implements SkeletonLayout.OnSkeletonLisenter {
 
     protected Activity mActivity;
 
@@ -225,6 +225,7 @@ public class CandyBaseActivity extends SwipeBackActivity {
         ViewGroup contentView = (ViewGroup) LayoutInflater.from(mActivity).inflate(layoutId, null, false);
         mSkeletonLayout = new SkeletonLayout(mActivity);
         contentView.addView(mSkeletonLayout);
+        mSkeletonLayout.setOnSkeletonLisenter(this);
         return contentView;
     }
 
@@ -239,11 +240,20 @@ public class CandyBaseActivity extends SwipeBackActivity {
             mSkeletonLayout.showSkeletonRetry();
         }
     }
+    protected void showSkeletonContent() {
+        if (mSkeletonLayout != null) {
+            mSkeletonLayout.showSkeletonContent();
+        }
+    }
 
     protected void showSkeletonEmpty() {
         if (mSkeletonLayout != null) {
             mSkeletonLayout.showSkeletonEmpty();
         }
+    }
+    @Override
+    public void onSkeletonRetry() {
+        //重试点击
     }
     //----------------------骨架图相关的封装 end----------------------
 
@@ -302,6 +312,8 @@ public class CandyBaseActivity extends SwipeBackActivity {
         // 加上动画
         slideRightIn();
     }
+
+
     //----------------------Activity启动相关的封装 end--------------------
 
 

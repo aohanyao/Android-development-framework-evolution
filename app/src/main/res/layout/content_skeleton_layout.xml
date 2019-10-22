@@ -6,6 +6,13 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".module.skeleton.SkeletonLayoutActivity"
+    android:gravity="center"
     tools:showIn="@layout/activity_skeleton_layout">
 
+    <TextView
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:text="内容：\n* 两种实现方式\n* xml引用\n* 基类代码中封装\n\t\t- 创建类\n\t\t- 创建布局\n\t\t- 引入布局"
+        android:layout_height="wrap_content"/>
 </LinearLayout>

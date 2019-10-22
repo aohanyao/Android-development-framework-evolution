@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item
+            android:id="@+id/mShowLoading"
+            android:title="ShowLoading" />
+        <item
+            android:id="@+id/mShowEmpty"
+            android:title="ShowEmpty" />
+        <item
+            android:id="@+id/mShowRetry"
+            android:title="ShowRetry" />
+        <item
+            android:id="@+id/mShowContent"
+            android:title="ShowContent" />
+    </group>
+</menu>

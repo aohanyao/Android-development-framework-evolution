@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import com.road.android.core.R;
@@ -47,11 +48,16 @@ public class SkeletonLayout extends FrameLayout {
      * 初始化骨架布局
      */
     private void initSkeletonLayout() {
+        FrameLayout.LayoutParams layoutParams = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+
+        setLayoutParams(layoutParams);
+
         initLoadingView();
         initRetryView();
         initLoadingView();
-        // 默认显示loading
-        showSkeletonLoading();
+        initEmptyView();
+        // 不显示布局
+        switchSkeleton(null);
     }
 
 
@@ -100,6 +106,10 @@ public class SkeletonLayout extends FrameLayout {
         switchSkeleton(mRetryLayout);
     }
 
+    public void showSkeletonContent() {
+        switchSkeleton(null);
+    }
+
     public void showSkeletonEmpty() {
         switchSkeleton(mEmptyLayout);
     }
@@ -143,7 +153,7 @@ public class SkeletonLayout extends FrameLayout {
     /**
      * 回调接口
      */
-    interface OnSkeletonLisenter {
+    public interface OnSkeletonLisenter {
         void onSkeletonRetry();
     }
 }
