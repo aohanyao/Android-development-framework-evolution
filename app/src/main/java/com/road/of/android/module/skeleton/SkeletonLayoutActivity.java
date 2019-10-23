@@ -20,6 +20,13 @@ public class SkeletonLayoutActivity extends CandyBaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(initSkeletonLayout(R.layout.activity_skeleton_layout));
+
+        // 随机
+        if (hashCode() % 2 == 0) {
+            mSkeletonLayout.setEmptyLayoutId(R.layout.cust_skeleton_base_empty);
+            mSkeletonLayout.setRetryLayoutId(R.layout.cust_skeleton_base_retry);
+            mSkeletonLayout.setLoadingLayoutId(R.layout.cust_skeleton_base_loading);
+        }
     }
 
 

@@ -49,7 +49,7 @@ UI方面主要以Design包为基准，网络及异步操作选用RxJava2+Retrofi
 ## 技术基础文章
 RxJava2入门文章请看[这可能是最好的RxJava 2.x 教程（完结版）](https://www.jianshu.com/p/0cd258eecf60)
 
-# 本系列文章
+# 基础部分
 - [x] [Android 之路 (1) - RxJava2+Retrofit实现简单登陆](http://fullscreendeveloper.cn/articles/2018/10/08/1538984930011.html)
 - [x] [Android 之路 (2) - 对登陆进行 MVP 改造](http://fullscreendeveloper.cn/articles/2018/10/09/1539084359439.html)
 - [x] [Android 之路 (3) - 对Retrofit的封装](http://fullscreendeveloper.cn/articles/2018/10/10/1539167974165.html)
@@ -64,6 +64,7 @@ RxJava2入门文章请看[这可能是最好的RxJava 2.x 教程（完结版）]
 - [x] [Android 之路 (12) - RxLifecycle的集成](http://fullscreendeveloper.cn/articles/2019/05/31/1559294685034.html)
 - [x] [Android 之路 (13) - RxJava请求结果预处理、多数据结构适配及统一错误处理](http://fullscreendeveloper.cn/articles/2019/10/16/1571213647696.html)
 
+# 进阶部分
 
 # 其他
 ## 什么时候更新

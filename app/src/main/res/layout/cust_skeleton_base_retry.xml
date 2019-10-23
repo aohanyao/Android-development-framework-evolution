@@ -17,11 +17,11 @@
 
     <ImageView
         android:id="@id/mSkeletonRetry"
-        android:layout_width="180dp"
+        android:layout_width="280dp"
         android:layout_height="220dp"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/skeleton_retry_image" />
+        android:src="@mipmap/skeleton_error" />
 
     <TextView
         android:id="@id/mSkeletonRetryText"

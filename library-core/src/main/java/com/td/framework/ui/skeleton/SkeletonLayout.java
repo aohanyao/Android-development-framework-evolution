@@ -37,7 +37,7 @@ public class SkeletonLayout extends FrameLayout {
     private View mEmptyLayout = null;
 
 
-    private OnSkeletonLisenter onSkeletonLisenter;
+    private OnSkeletonListener onSkeletonListener;
 
     public SkeletonLayout(@NonNull Context context) {
         super(context);
@@ -52,7 +52,6 @@ public class SkeletonLayout extends FrameLayout {
 
         setLayoutParams(layoutParams);
 
-        initLoadingView();
         initRetryView();
         initLoadingView();
         initEmptyView();
@@ -90,8 +89,8 @@ public class SkeletonLayout extends FrameLayout {
             mSkeletonRetry.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (onSkeletonLisenter != null) {
-                        onSkeletonLisenter.onSkeletonRetry();
+                    if (onSkeletonListener != null) {
+                        onSkeletonListener.onSkeletonRetry();
                     }
                 }
             });
@@ -146,14 +145,23 @@ public class SkeletonLayout extends FrameLayout {
         initEmptyView();
     }
 
-    public void setOnSkeletonLisenter(OnSkeletonLisenter onSkeletonLisenter) {
-        this.onSkeletonLisenter = onSkeletonLisenter;
+    public void setOnSkeletonListener(OnSkeletonListener onSkeletonListener) {
+        this.onSkeletonListener = onSkeletonListener;
     }
 
     /**
      * 回调接口
      */
-    public interface OnSkeletonLisenter {
+    public interface OnSkeletonListener {
+        /**显示loading状态*/
+        void showSkeletonLoading();
+        /**显示重试状态，请求失败的时候使用*/
+        void showSkeletonRetry();
+        /**隐藏所有状态，现在主内容*/
+        void showSkeletonContent();
+        /**显示空状态,没有数据的时候使用*/
+        void showSkeletonEmpty();
+        /**重试状态下被点击，用来确认下一步操作*/
         void onSkeletonRetry();
     }
 }

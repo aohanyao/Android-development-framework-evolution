@@ -39,7 +39,7 @@ import com.td.framework.utils.data.IntentUtils;
  * ②适配了异形屏，全面沉浸
  * -------------------------------
  */
-public class CandyBaseActivity extends SwipeBackActivity implements SkeletonLayout.OnSkeletonLisenter {
+public class CandyBaseActivity extends SwipeBackActivity implements SkeletonLayout.OnSkeletonListener {
 
     protected Activity mActivity;
 
@@ -52,7 +52,7 @@ public class CandyBaseActivity extends SwipeBackActivity implements SkeletonLayo
     /**
      * 骨架图
      */
-    private SkeletonLayout mSkeletonLayout;
+    protected SkeletonLayout mSkeletonLayout;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -225,28 +225,28 @@ public class CandyBaseActivity extends SwipeBackActivity implements SkeletonLayo
         ViewGroup contentView = (ViewGroup) LayoutInflater.from(mActivity).inflate(layoutId, null, false);
         mSkeletonLayout = new SkeletonLayout(mActivity);
         contentView.addView(mSkeletonLayout);
-        mSkeletonLayout.setOnSkeletonLisenter(this);
+        mSkeletonLayout.setOnSkeletonListener(this);
         return contentView;
     }
 
-    protected void showSkeletonLoading() {
+    public void showSkeletonLoading() {
         if (mSkeletonLayout != null) {
             mSkeletonLayout.showSkeletonLoading();
         }
     }
 
-    protected void showSkeletonRetry() {
+    public void showSkeletonRetry() {
         if (mSkeletonLayout != null) {
             mSkeletonLayout.showSkeletonRetry();
         }
     }
-    protected void showSkeletonContent() {
+    public void showSkeletonContent() {
         if (mSkeletonLayout != null) {
             mSkeletonLayout.showSkeletonContent();
         }
     }
 
-    protected void showSkeletonEmpty() {
+    public void showSkeletonEmpty() {
         if (mSkeletonLayout != null) {
             mSkeletonLayout.showSkeletonEmpty();
         }
