@@ -63,6 +63,8 @@ RxJava2入门文章请看[这可能是最好的RxJava 2.x 教程（完结版）]
 - [x] [Android 之路 (11) - 对Toolbar的封装-实现渐变标题栏与沉浸适配](http://fullscreendeveloper.cn/articles/2019/05/23/1558614398661.html)
 - [x] [Android 之路 (12) - RxLifecycle的集成](http://fullscreendeveloper.cn/articles/2019/05/31/1559294685034.html)
 - [x] [Android 之路 (13) - RxJava请求结果预处理、多数据结构适配及统一错误处理](http://fullscreendeveloper.cn/articles/2019/10/16/1571213647696.html)
+- [ ] Android 之路 (14) - 咕咕咕🕊
+- [x] [Android 之路 (15)  - 骨架状态布局(SkeletonLayout)的实现思路与封装](http://fullscreendeveloper.cn/articles/2019/10/24/1571903060482.html)
 
 # 进阶部分
 
