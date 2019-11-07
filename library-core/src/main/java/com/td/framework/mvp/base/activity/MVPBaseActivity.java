@@ -47,14 +47,16 @@ abstract public class MVPBaseActivity<P extends BasePresenter> extends CandyLoad
     public void onDialogCancelListener(AlertDialog dialog) {
         super.onDialogCancelListener(dialog);
         // dialog取消，取消订阅
-        getP().unDisposable();
+        if (getP() != null)
+            getP().unDisposable();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         // 销毁 取消订阅
-        getP().unDisposable();
+        if (getP() != null)
+            getP().unDisposable();
     }
 
     @Override
